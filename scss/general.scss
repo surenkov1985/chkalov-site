@@ -175,6 +175,7 @@ body {
 	color: var(--clr-accent);
 	overflow-x: hidden;
 	font-size: 16px;
+	scroll-behavior: smooth;
 }
 
 h1,
@@ -229,4 +230,75 @@ h4.h4-regular,
 
 .hidden {
 	overflow: hidden;
+}
+
+.light-text {
+	color: var(--clr-gray);
+}
+
+.nav-link {
+	color: var(--clr-accent);
+	transition: all var(--transition-duration);
+	position: relative;
+	display: flex;
+	font-size: 0.875rem;
+	line-height: 1.3;
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 0;
+		height: 1px;
+		background: var(--clr-accent-blue-hover);
+		transition: all var(--transition-duration);
+
+	}
+
+	&:hover {
+		color: var(--clr-accent-blue-hover);
+
+		&::before {
+			width: 100%;
+			background: var(--clr-accent-blue-hover);
+		}
+	}
+}
+
+.phone-link {
+	display: flex;
+	align-items: center;
+	color: var(--clr-accent);
+	transition: all var(--transition-duration);
+	gap: 2px;
+
+	& svg {
+		flex-shrink: 0;
+
+		path {
+			transition: all var(--transition-duration);
+		}
+	}
+
+	&:hover {
+		color: var(--clr-accent-blue-hover);
+
+		& svg {
+			path {
+				fill: var(--clr-accent-blue-hover);
+			}
+		}
+	}
+}
+
+.light-link {
+	color: var(--clr-accent);
+	text-decoration: underline;
+	transition: all var(--transition-duration);
+
+	&:hover {
+		color: var(--clr-accent-blue-hover);
+	}
 }

@@ -1,0 +1,120 @@
+.head {
+
+	& .container {
+		padding-top: 35px;
+		padding-bottom: 35px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__nav {
+
+		&_list {
+			display: flex;
+			align-items: center;
+			gap: 2rem;
+		}
+	}
+}
+
+.main {
+	flex-grow: 1;
+}
+
+.foot {
+	background: var(--clr-light);
+
+	& .container {
+		padding-top: 70px;
+		padding-bottom: 35px;
+	}
+
+	&__content {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 155px;
+	}
+
+	&__cols {
+		display: flex;
+		align-items: flex-start;
+		gap: 6rem;
+	}
+
+	&__col {
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+		max-width: 285px;
+
+		&_buttons {
+			display: flex;
+			flex-direction: column;
+			gap: 35px;
+		}
+	}
+
+	&__nav {
+		&_list {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 11px;
+		}
+
+		&_contact {
+			&-title {
+				margin-bottom: 2px;
+			}
+
+			&-link {
+				color: var(--clr-accent);
+				transition: all var(--transition-duration);
+
+				&:hover {
+					color: var(--clr-accent-blue-hover);
+				}
+			}
+		}
+	}
+}
+
+.scls {
+
+	&__title {
+		margin-bottom: 11px;
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+
+	&__item {
+		& svg path {
+			transition: all var(--transition-duration);
+		}
+
+		&:hover {
+			& svg path:first-child {
+				fill: var(--clr-accent-blue-hover) !important;
+			}
+		}
+	}
+}
+
+.copyright {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	justify-content: center;
+	margin-top: 75px;
+
+	&__text {
+		display: flex;
+		align-items: center;
+	}
+}
