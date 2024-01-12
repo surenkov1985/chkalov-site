@@ -20,4 +20,7 @@
     justify-content: flex-start;
     margin-top: 45px;
   }
+  .mobile__content {
+    padding: 20px 30px 30px;
+  }
 }

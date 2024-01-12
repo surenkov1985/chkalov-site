@@ -19,6 +19,19 @@
   color: var(--clr-white);
   background: var(--clr-gray);
 }
+.btn-color {
+  color: var(--clr-white);
+  background: linear-gradient(92deg, #ff8f56 0%, #FF945B 41.95%, #FFA55C 44.47%, #FFB16E 55.01%, #FF9B62 59.04%);
+  background-size: 300%;
+  background-position-x: center;
+  padding: 18px 54px;
+  border-radius: 70px;
+  box-shadow: 0px -1px 4px 0px rgba(255, 255, 255, 0.76) inset, 0px 2px 0px 0px rgba(222, 67, 0, 0.78);
+}
+.btn-color:hover {
+  background-position: left;
+  box-shadow: 0px -1px 4px 0px rgba(255, 255, 255, 0.76) inset, 0px 2px 0px 0px #E56D2B;
+}
 
 .container {
   width: 100%;
