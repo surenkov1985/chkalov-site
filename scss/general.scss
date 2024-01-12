@@ -243,6 +243,7 @@ h4.h4-regular,
 	display: flex;
 	font-size: 0.875rem;
 	line-height: 1.3;
+	white-space: nowrap;
 
 	&::before {
 		content: "";
@@ -273,6 +274,7 @@ h4.h4-regular,
 	color: var(--clr-accent);
 	transition: all var(--transition-duration);
 	gap: 2px;
+	white-space: nowrap;
 
 	& svg {
 		flex-shrink: 0;
@@ -300,5 +302,14 @@ h4.h4-regular,
 
 	&:hover {
 		color: var(--clr-accent-blue-hover);
+	}
+}
+
+.logo {
+	display: flex;
+	width: 150px;
+
+	& img {
+		width: 100%;
 	}
 }

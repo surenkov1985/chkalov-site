@@ -1,0 +1,52 @@
+@media screen and (max-width: 550px) {
+
+	:root {
+		--cont-padding: 1rem;
+	}
+
+	.head {
+		&__call {
+			gap: 10px;
+
+			&_link {
+				width: 40px;
+				height: 40px;
+
+				& svg {
+					width: 100%;
+					height: 100%;
+				}
+
+				& .num {
+					display: none;
+				}
+
+			}
+		}
+	}
+
+	.foot {
+
+		& .container {
+			padding-top: 30px;
+			padding-bottom: 20px;
+		}
+
+		&__content {
+			gap: 25px;
+		}
+
+		&__cols {
+			gap: 25px 40px;
+		}
+	}
+
+	.copyright {
+		margin-top: 30px;
+		gap: 5px;
+	}
+
+	.logo {
+		width: 125px;
+	}
+}

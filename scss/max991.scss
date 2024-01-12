@@ -1,0 +1,36 @@
+@media screen and (max-width: 991px) {
+
+	:root {
+		--cont-padding: 2.5rem;
+	}
+
+	.head {
+		& .container {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+	}
+
+	.foot {
+
+		& .container {
+			padding-top: 60px;
+			padding-bottom: 30px;
+		}
+
+		&__content {
+			flex-direction: column;
+		}
+
+		&__cols {
+			width: 100%;
+			justify-content: space-between;
+			gap: 3rem;
+			flex-wrap: wrap;
+		}
+	}
+
+	.copyright {
+		margin-top: 60px;
+	}
+}

@@ -1,0 +1,6 @@
+@media screen and (max-width: 375px) {
+  .head .container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}

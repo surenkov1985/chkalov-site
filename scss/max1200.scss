@@ -1,0 +1,23 @@
+@media screen and (max-width: 1200px) {
+
+	:root {
+		--cont-padding: 3rem;
+	}
+
+	.head {
+
+		&__nav {
+			display: none;
+		}
+
+		&__burger {
+			display: block;
+		}
+	}
+
+	.foot {
+		&__cols {
+			gap: 3.5rem;
+		}
+	}
+}
