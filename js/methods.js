@@ -27,11 +27,20 @@ function scrollToElement(elem) {
 	}, 2000);
 }
 
-// $(document).ready(function(){
-// 	if($('.main_map').length > 0) {
-// 		 setTimeout(init, 500);
-// 	}
-// });
+async function loadScript(src, func = false) {
+	const script = document.createElement('script');
+	script.src = src;
+	document.body.append(script);
+	if (func) script.onload = () => func();
+}
+
+$(document).ready(function () {
+	// if ($('#main_map').length > 0) {
+	// 	setTimeout(initMap, 500);
+	// }
+
+	loadScript(window.location.protocol + "//api-maps.yandex.ru/2.1/?lang=ru_RU", initMap.bind(this));
+});
 function initMap() {
 	ymaps.ready(function () {
 		// Карта

@@ -337,4 +337,12 @@
 	& .h2 {
 		margin-bottom: 60px;
 	}
+
+	& #main_map {
+		width: 100%;
+		height: 557px;
+		border-radius: var(--radius);
+		overflow: hidden;
+		isolation: isolate;
+	}
 }
