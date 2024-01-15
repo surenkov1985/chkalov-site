@@ -37,4 +37,35 @@
 			padding: 20px 30px 30px;
 		}
 	}
+
+	.fs {
+
+		&__title,
+		&__subtitle {
+			font-size: 32px;
+		}
+
+		&__decor {
+
+			&_right {
+				right: 0%;
+
+				&-foll {
+					position: absolute;
+					left: 40%;
+					top: 50%;
+				}
+			}
+
+			&_left {
+				left: -8%;
+
+				&-foll {
+					position: absolute;
+					right: 10%;
+					top: 30%;
+				}
+			}
+		}
+	}
 }

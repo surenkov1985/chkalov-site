@@ -1,0 +1,356 @@
+@media (max-width: 1800px) {
+	.fs {
+		// position: relative;
+
+		&__decor {
+			&_left {
+				left: -5%;
+
+				&-house {
+					position: absolute;
+					/* bottom: -30%; */
+					width: 100%;
+					right: 29.3%;
+					top: 12%;
+
+					& img {
+						width: 100%;
+					}
+				}
+
+				&-three1 {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 85%;
+				}
+
+				&-three2 {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 85%;
+				}
+
+				&-three3 {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					width: 85%;
+				}
+
+				&-foll {
+					position: absolute;
+					right: 27%;
+					top: 5%;
+				}
+			}
+
+			&_right {
+				right: -5%;
+
+				&-house {
+					position: absolute;
+					width: 138%;
+					left: 13.3%;
+					top: 8%;
+
+
+					& img {
+						width: 100%;
+					}
+				}
+
+				&-three1 {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+				}
+
+				&-three2 {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+				}
+
+				&-foll {
+					position: absolute;
+					left: 28%;
+					top: 6%;
+				}
+			}
+
+
+		}
+	}
+}
+
+@media (max-width: 1680px) {
+	.fs {
+		// position: relative;
+
+		&__decor {
+			&_left {
+				left: -5%;
+
+				&-house {
+					position: absolute;
+					/* bottom: -30%; */
+					width: 100%;
+					right: 19.3%;
+					top: 15%;
+
+					& img {
+						width: 100%;
+					}
+				}
+
+				&-three1 {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 85%;
+				}
+
+				&-three2 {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 85%;
+				}
+
+				&-three3 {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					width: 85%;
+				}
+
+				&-foll {
+					position: absolute;
+					right: 6%;
+					top: 5%;
+				}
+			}
+
+			&_right {
+				right: -5%;
+
+				&-house {
+					position: absolute;
+					width: 138%;
+					left: 13.3%;
+					top: 14%;
+
+
+					& img {
+						width: 100%;
+					}
+				}
+
+				&-three1 {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+				}
+
+				&-three2 {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+				}
+
+				&-foll {
+					position: absolute;
+					left: 28%;
+					top: 18%;
+				}
+			}
+
+
+		}
+	}
+}
+
+@media (max-width: 1550px) {
+	.fs {
+		// position: relative;
+
+		&__decor {
+			&_left {
+				left: -5%;
+
+				&-house {
+					position: absolute;
+					/* bottom: -30%; */
+					width: 100%;
+					right: 19.3%;
+					top: 19%;
+
+					& img {
+						width: 100%;
+					}
+				}
+
+				&-three1 {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 85%;
+				}
+
+				&-three2 {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 85%;
+				}
+
+				&-three3 {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					width: 85%;
+				}
+
+				&-foll {
+					position: absolute;
+					right: 3%;
+					top: 2%;
+				}
+			}
+
+			&_right {
+				right: -5%;
+
+				&-house {
+					position: absolute;
+					width: 138%;
+					left: 17.3%;
+					top: 19%;
+
+
+					& img {
+						width: 100%;
+					}
+				}
+
+				&-three1 {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+				}
+
+				&-three2 {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+				}
+
+				&-foll {
+					position: absolute;
+					left: 35%;
+					top: 26%;
+				}
+			}
+
+
+		}
+	}
+}
+
+@media (max-width: 1440px) {
+	.fs {
+		// max-height: 850px;
+
+		&-index {
+
+			& .container {
+				padding-top: 190px;
+				padding-bottom: 140px;
+			}
+		}
+
+		&__decor {
+			&_left {
+				left: -8%;
+
+				&-house {
+					position: absolute;
+					/* bottom: -30%; */
+					width: 100%;
+					// right: 32.3%;
+					top: 25%;
+
+
+					& img {
+						width: 100%;
+					}
+				}
+
+				&-three1 {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 85%;
+				}
+
+				&-three2 {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 85%;
+				}
+
+				&-three3 {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					width: 85%;
+				}
+
+				&-foll {
+					position: absolute;
+					right: 6%;
+					top: 7%;
+				}
+			}
+
+			&_right {
+				right: -8%;
+
+				&-house {
+					position: absolute;
+					width: 138%;
+					left: 19.3%;
+					top: 21%;
+
+
+					& img {
+						width: 100%;
+					}
+				}
+
+				&-three1 {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+				}
+
+				&-three2 {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+				}
+
+				&-foll {
+					position: absolute;
+					left: 40%;
+					top: 26%;
+				}
+			}
+
+
+		}
+	}
+}

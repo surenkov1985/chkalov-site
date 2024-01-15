@@ -23,4 +23,23 @@
   .mobile__content {
     padding: 20px 30px 30px;
   }
+  .fs__title, .fs__subtitle {
+    font-size: 32px;
+  }
+  .fs__decor_right {
+    right: 0%;
+  }
+  .fs__decor_right-foll {
+    position: absolute;
+    left: 40%;
+    top: 50%;
+  }
+  .fs__decor_left {
+    left: -8%;
+  }
+  .fs__decor_left-foll {
+    position: absolute;
+    right: 10%;
+    top: 30%;
+  }
 }

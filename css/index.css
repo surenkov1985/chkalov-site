@@ -1,3 +1,160 @@
-body {
+.fs {
+  background: url(/images/fs_bg.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+.fs-index .container {
+  padding-top: 226px;
+  padding-bottom: 153px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.fs__decor_left {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.fs__decor_left-house {
+  position: absolute;
+  /* bottom: -30%; */
   width: 100%;
+  right: 32.3%;
+  top: 8%;
+}
+.fs__decor_left-house img {
+  width: 100%;
+}
+.fs__decor_left-three1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 85%;
+}
+.fs__decor_left-three2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 85%;
+}
+.fs__decor_left-three3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 85%;
+}
+.fs__decor_left-foll {
+  position: absolute;
+  right: 27%;
+  top: 5%;
+}
+.fs__decor_right {
+  overflow: hidden;
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+.fs__decor_right-house {
+  position: absolute;
+  width: 138%;
+  left: 11.3%;
+  top: -5%;
+}
+.fs__decor_right-house img {
+  width: 100%;
+}
+.fs__decor_right-three1 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.fs__decor_right-three2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.fs__decor_right-foll {
+  position: absolute;
+  left: 28%;
+  top: 6%;
+}
+.fs__title {
+  letter-spacing: 2.08px;
+  font-size: 52px;
+  text-align: center;
+}
+.fs__subtitle {
+  color: var(--clr-accent-blue);
+  font-family: "Good Vibes Pro";
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 2.08px;
+  text-align: center;
+}
+.fs__recall {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+.fs__advs {
+  margin-top: 90px;
+  width: 80%;
+}
+.fs__advs_list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.fs__advs_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-width: 185px;
+}
+.fs__advs_item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: var(--clr-white);
+  filter: drop-shadow(0px 3px 18px rgba(221, 226, 246, 0.77));
+}
+.fs__advs_item-title {
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.fs__advs_item-text {
+  text-align: center;
+  line-height: 1.4;
+}
+
+.about__desc {
+  max-width: 700px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 24px;
+  margin-bottom: 60px;
 }

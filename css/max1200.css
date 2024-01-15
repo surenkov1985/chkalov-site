@@ -11,4 +11,87 @@
   .foot__cols {
     gap: 3.5rem;
   }
+  .fs-index .container {
+    padding-top: 160px;
+    padding-bottom: 100px;
+  }
+  .fs__title, .fs__subtitle {
+    font-size: 46px;
+  }
+  .fs__recall {
+    gap: 45px;
+  }
+  .fs__advs {
+    margin-top: 70px;
+  }
+  .fs__decor_left {
+    left: -8%;
+    width: 35%;
+  }
+  .fs__decor_left-house {
+    position: absolute;
+    /* bottom: -30%; */
+    width: 100%;
+    bottom: -30%;
+  }
+  .fs__decor_left-house img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom right;
+  }
+  .fs__decor_left-three1 {
+    position: absolute;
+    bottom: 0;
+    left: -5%;
+    width: 85%;
+  }
+  .fs__decor_left-three2 {
+    position: absolute;
+    bottom: 0;
+    left: -3%;
+    width: 85%;
+  }
+  .fs__decor_left-three3 {
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    width: 85%;
+  }
+  .fs__decor_left-foll {
+    position: absolute;
+    right: 10%;
+    top: 13%;
+  }
+  .fs__decor_right {
+    right: -8%;
+    width: 35%;
+  }
+  .fs__decor_right-house {
+    position: absolute;
+    width: 138%;
+    left: 15.3%;
+    bottom: -5%;
+  }
+  .fs__decor_right-house img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom left;
+  }
+  .fs__decor_right-three1 {
+    position: absolute;
+    bottom: 0;
+    left: 37%;
+  }
+  .fs__decor_right-three2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .fs__decor_right-foll {
+    position: absolute;
+    left: 40%;
+    top: 26%;
+  }
 }

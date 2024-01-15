@@ -33,4 +33,16 @@
   .logo {
     width: 125px;
   }
+  .fs__decor_right {
+    right: 0%;
+  }
+  .fs__decor_right-foll {
+    display: none;
+  }
+  .fs__decor_left {
+    left: -8%;
+  }
+  .fs__decor_left-foll {
+    display: none;
+  }
 }

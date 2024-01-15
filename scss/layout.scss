@@ -1,4 +1,9 @@
 .head {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 100;
 
 	& .container {
 		padding-top: 35px;
@@ -206,9 +211,23 @@
 	z-index: 1000;
 	background: rgba($color: #fff, $alpha: 0.3);
 	backdrop-filter: blur(1px);
+	visibility: hidden;
+	opacity: 0;
+	transition: all var(--transition-duration);
+
+	&.show {
+		visibility: visible;
+		opacity: 1;
+
+
+		& .mobile__content {
+			visibility: visible;
+			// transform: translate(0);
+		}
+	}
 
 	&__content {
-		width: 80%;
+		width: 90%;
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -225,6 +244,9 @@
 		flex-direction: column;
 		justify-content: space-between;
 		gap: 40px;
+		visibility: hidden;
+		transform: translate(100%);
+		transition: all 0.7s;
 
 		&_head {
 			display: flex;
@@ -255,6 +277,22 @@
 		display: flex;
 		flex-direction: column;
 		gap: 18px;
+	}
+
+	&__close {
+
+		&_btn {
+
+			& svg path {
+				transition: all var(--transition-duration);
+			}
+
+			&:hover {
+				& svg path {
+					stroke: var(--clr-accent-blue-hover);
+				}
+			}
+		}
 	}
 
 }

@@ -49,4 +49,26 @@
 	.logo {
 		width: 125px;
 	}
+
+	.fs {
+
+		&__decor {
+
+			&_right {
+				right: 0%;
+
+				&-foll {
+					display: none;
+				}
+			}
+
+			&_left {
+				left: -8%;
+
+				&-foll {
+					display: none;
+				}
+			}
+		}
+	}
 }
