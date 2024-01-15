@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+	aboutSlider();
+
 	$(document).on("click", ".head__burger_btn", function () {
 		openMobile();
 	});
