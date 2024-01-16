@@ -152,7 +152,28 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
 	border: none;
 	outline: none !important;
+	background: #ffffff00;
+	transition: all 5000s ease-in-out;
 }
+
+// input:-webkit-autofill,
+// input:-webkit-autofill:hover,
+// input:-webkit-autofill:focus,
+// input:-webkit-autofill:active {
+// 	box-shadow: inset 20px 20px 0px 20px rgba(0, 0, 0, 0) !important;
+// }
+
+// @-webkit-keyframes autofill {
+// 	to {
+// 		color: #000;
+// 		background: transparent;
+// 	}
+// }
+
+// input:-webkit-autofill {
+// 	-webkit-animation-name: autofill;
+// 	-webkit-animation-fill-mode: both;
+// }
 
 input:active,
 input:focus,
@@ -219,6 +240,7 @@ h4,
 
 h4.h4-regular,
 .h4.h4-regular {
+	line-height: 1.4;
 	font-weight: 400;
 }
 

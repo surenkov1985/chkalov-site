@@ -152,6 +152,8 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   border: none;
   outline: none !important;
+  background: rgba(255, 255, 255, 0);
+  transition: all 5000s ease-in-out;
 }
 
 input:active,
@@ -219,6 +221,7 @@ h4,
 
 h4.h4-regular,
 .h4.h4-regular {
+  line-height: 1.4;
   font-weight: 400;
 }
 

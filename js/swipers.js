@@ -39,3 +39,15 @@ function aboutSlider() {
 		});
 	}
 }
+
+function finishingsSlider() {
+	const finishings = document.querySelector(".finishings__slider");
+
+	if (!finishings) return;
+
+	let slider = new Swiper(finishings, {
+		initialSlide: 1,
+		spaceBetween: 120,
+		speed: 1000
+	})
+}

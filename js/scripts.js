@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 	aboutSlider();
+	finishingsSlider();
 
 	$(document).on("click", ".head__burger_btn", function () {
 		openMobile();
@@ -24,5 +25,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		closeModal();
 		scrollToElement(elem);
-	})
-})
+	});
+});

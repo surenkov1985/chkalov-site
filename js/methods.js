@@ -50,6 +50,29 @@ function initMap() {
 			controls: ['geolocationControl']
 		});
 
+		var myCircle = new ymaps.GeoObject({
+			geometry: {
+				type: "Circle",
+				coordinates: [59.617322, 30.383570],
+				radius: 208,
+
+			}
+		},
+			{
+				fillColor: '#779DFD33',
+				stroke: false,
+				draggable: true
+			});
+
+		myCircle.events.add('dragend', function (e) {
+			// Получение ссылки на объект, который был передвинут.
+			var thisPlacemark = e.get('target');
+			// Определение координат метки
+			var coords = thisPlacemark.geometry.getCoordinates();
+			// и вывод их при щелчке на метке
+			thisPlacemark.properties.set('balloonContent', coords);
+		});
+
 		// Создание меток
 		var objects = [
 			new ymaps.Placemark(
@@ -57,8 +80,8 @@ function initMap() {
 				hintContent: '',
 				balloonContent: 'ЖК Уютный'
 			}, {
-				iconLayout: 'default#imageWithContent',
-				iconImageHref: '../img/map/main.png',
+				// iconLayout: 'default#imageWithContent',
+				// iconImageHref: '../img/map/main.png',
 				iconImageSize: [37, 49],
 				iconImageOffset: [-17, -43]
 			}),
@@ -67,22 +90,23 @@ function initMap() {
 			new ymaps.Placemark(
 				[59.618969, 30.395319], {
 				hintContent: '',
-				balloonContent: 'Физкультурно-оздоровительный комплекс Олимп'
+				balloonContent: 'Sport'
 			}, {
 				iconLayout: 'default#imageWithContent',
-				iconImageHref: '../img/map/sport.svg',
+				iconImageHref: '/images/icons/sport.svg',
 				iconImageSize: [40, 40],
-				iconImageOffset: [-20, -20]
+				iconImageOffset: [-20, -20],
+				width: 30
 			}),
 
 			// Продукты
 			new ymaps.Placemark(
 				[59.618180, 30.387655], {
 				hintContent: '',
-				balloonContent: 'Пятачок'
+				balloonContent: 'Магазины'
 			}, {
 				iconLayout: 'default#imageWithContent',
-				iconImageHref: '../img/map/product.svg',
+				iconImageHref: '/images/icons/sales.svg',
 				iconImageSize: [40, 40],
 				iconImageOffset: [-20, -20]
 			}),
@@ -92,7 +116,7 @@ function initMap() {
 				balloonContent: 'Мини Лента'
 			}, {
 				iconLayout: 'default#imageWithContent',
-				iconImageHref: '../img/map/product.svg',
+				iconImageHref: '/images/icons/sales.svg',
 				iconImageSize: [40, 40],
 				iconImageOffset: [-20, -20]
 			}),
@@ -102,7 +126,7 @@ function initMap() {
 				balloonContent: 'Красное&Белое'
 			}, {
 				iconLayout: 'default#imageWithContent',
-				iconImageHref: '../img/map/product.svg',
+				iconImageHref: '/images/icons/sales.svg',
 				iconImageSize: [40, 40],
 				iconImageOffset: [-20, -20]
 			}),
@@ -112,7 +136,7 @@ function initMap() {
 				balloonContent: 'Супермаркет "Магнит"'
 			}, {
 				iconLayout: 'default#imageWithContent',
-				iconImageHref: '../img/map/product.svg',
+				iconImageHref: '/images/icons/sales.svg',
 				iconImageSize: [40, 40],
 				iconImageOffset: [-20, -20]
 			}),
@@ -122,7 +146,7 @@ function initMap() {
 				balloonContent: 'Семишагофф'
 			}, {
 				iconLayout: 'default#imageWithContent',
-				iconImageHref: '../img/map/product.svg',
+				iconImageHref: '/images/icons/sales.svg',
 				iconImageSize: [40, 40],
 				iconImageOffset: [-20, -20]
 			}),
@@ -132,7 +156,7 @@ function initMap() {
 				balloonContent: 'Супермаркет "Пятёрочка"'
 			}, {
 				iconLayout: 'default#imageWithContent',
-				iconImageHref: '../img/map/product.svg',
+				iconImageHref: '/images/icons/sales.svg',
 				iconImageSize: [40, 40],
 				iconImageOffset: [-20, -20]
 			}),
@@ -144,7 +168,7 @@ function initMap() {
 				balloonContent: 'Торговый центр "Западный"'
 			}, {
 				iconLayout: 'default#imageWithContent',
-				iconImageHref: '../img/map/tc.svg',
+				iconImageHref: '/images/icons/sales.svg',
 				iconImageSize: [40, 40],
 				iconImageOffset: [-20, -20]
 			}),
@@ -154,7 +178,7 @@ function initMap() {
 				balloonContent: 'Торговый центр "Элиен"'
 			}, {
 				iconLayout: 'default#imageWithContent',
-				iconImageHref: '../img/map/tc.svg',
+				iconImageHref: '/images/icons/sales.svg',
 				iconImageSize: [40, 40],
 				iconImageOffset: [-20, -20]
 			}),
@@ -164,7 +188,7 @@ function initMap() {
 				balloonContent: ''
 			}, {
 				iconLayout: 'default#imageWithContent',
-				iconImageHref: '../img/map/tc.svg',
+				iconImageHref: '/images/icons/sales.svg',
 				iconImageSize: [40, 40],
 				iconImageOffset: [-20, -20]
 			}),
@@ -176,7 +200,7 @@ function initMap() {
 				balloonContent: 'Коммунарская средняя общеобразовательная школа № 3'
 			}, {
 				iconLayout: 'default#imageWithContent',
-				iconImageHref: '../img/map/shc.svg',
+				iconImageHref: '/images/icons/stud.svg',
 				iconImageSize: [40, 40],
 				iconImageOffset: [-20, -20]
 			}),
@@ -186,7 +210,7 @@ function initMap() {
 				balloonContent: 'Коммунароская детская школа искусств'
 			}, {
 				iconLayout: 'default#imageWithContent',
-				iconImageHref: '../img/map/shc.svg',
+				iconImageHref: '/images/icons/stud.svg',
 				iconImageSize: [40, 40],
 				iconImageOffset: [-20, -20]
 			}),
@@ -199,7 +223,7 @@ function initMap() {
 				balloonContent: 'Поликлиника'
 			}, {
 				iconLayout: 'default#imageWithContent',
-				iconImageHref: '../img/map/med.svg',
+				iconImageHref: '/images/icons/medic.svg',
 				iconImageSize: [40, 40],
 				iconImageOffset: [-20, -20]
 			}),
@@ -209,7 +233,7 @@ function initMap() {
 				balloonContent: 'Стома Люкс - медцентр, клиникастоматологическая клиника'
 			}, {
 				iconLayout: 'default#imageWithContent',
-				iconImageHref: '../img/map/med.svg',
+				iconImageHref: '/images/icons/medic.svg',
 				iconImageSize: [40, 40],
 				iconImageOffset: [-20, -20]
 			}),
@@ -221,7 +245,7 @@ function initMap() {
 				balloonContent: 'Церковь Владимира Равноапостольного'
 			}, {
 				iconLayout: 'default#imageWithContent',
-				iconImageHref: '../img/map/hram.svg',
+				iconImageHref: '/images/icons/kult.svg',
 				iconImageSize: [40, 40],
 				iconImageOffset: [-20, -20]
 			}),
@@ -232,5 +256,10 @@ function initMap() {
 
 		// Добавление метки на карту
 		ymaps.geoQuery(objects).addToMap(myMap);
+
+		// ymaps.geoQuery(objects).addToMap(myMap);
+		myMap.geoObjects.add(myCircle);
+
+
 	});
 }
