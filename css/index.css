@@ -470,10 +470,6 @@
   z-index: 1;
   background: none !important;
 }
-.feedback__form_label .input:focus + .border {
-  border-color: var(--clr-accent);
-  background: #F5F6FC;
-}
 .feedback__form_scls {
   display: flex;
   align-items: center;
@@ -518,4 +514,61 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.aparts .h2 {
+  margin-bottom: 60px;
+}
+
+.filter__form_fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+.filter__form_field {
+  flex: 1 1 225px;
+  background: var(--clr-white);
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 18px;
+  width: 100%;
+  position: relative;
+}
+.dropdown__title {
+  color: var(--clr-gray-hover);
+}
+.dropdown__value {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  cursor: pointer;
+  transition: all var(--transition-duration);
+}
+.dropdown__value svg path {
+  transition: all var(--transition-duration);
+}
+.dropdown__value:hover {
+  color: var(--clr-accent-blue-hover);
+}
+.dropdown__value:hover svg path {
+  fill: var(--clr-accent-blue-hover);
+}
+.dropdown__value .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.dropdown__list {
+  position: absolute;
+  width: 100%;
+  background: var(--clr-white);
+  padding: 6px 18px;
+  border-radius: calc(var(--radius) / 2);
+  left: 0;
+  top: calc(100% + 3px);
 }
