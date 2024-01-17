@@ -150,6 +150,9 @@
   line-height: 1.4;
 }
 
+.about {
+  overflow: hidden;
+}
 .about__desc {
   max-width: 700px;
   text-align: center;
@@ -319,6 +322,9 @@
   height: 100%;
 }
 
+.finishings {
+  overflow: hidden;
+}
 .finishings .h2 {
   margin-bottom: 60px;
 }
@@ -528,25 +534,34 @@
 .filter__form_field {
   flex: 1 1 225px;
   background: var(--clr-white);
+  padding: 6px 18px;
+  position: relative;
 }
 
 .dropdown {
   display: flex;
   flex-direction: column;
-  padding: 6px 18px;
   width: 100%;
-  position: relative;
+  z-index: 2;
+  font-weight: 600;
+}
+.dropdown.active .dropdown__list {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }
 .dropdown__title {
   color: var(--clr-gray-hover);
 }
 .dropdown__value {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 6px 0;
   cursor: pointer;
   transition: all var(--transition-duration);
+  z-index: 2;
 }
 .dropdown__value svg path {
   transition: all var(--transition-duration);
@@ -567,8 +582,171 @@
   position: absolute;
   width: 100%;
   background: var(--clr-white);
-  padding: 6px 18px;
   border-radius: calc(var(--radius) / 2);
   left: 0;
   top: calc(100% + 3px);
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  box-shadow: 0px 4px 8px 0px rgba(139, 143, 162, 0.1);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all var(--transition-duration);
+  overflow: auto;
+  max-height: 250px;
+}
+.dropdown__item {
+  padding: 12px 18px;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  transition: all var(--transition-duration);
+}
+.dropdown__item input {
+  position: absolute;
+  visibility: hidden;
+}
+.dropdown__item input:checked + .value {
+  color: var(--clr-accent-blue-hover);
+}
+.dropdown__item:not(:last-child) {
+  border-bottom: 1px solid var(--clr-light);
+}
+.dropdown__item:hover {
+  background: rgba(245, 246, 251, 0.3);
+  color: var(--clr-accent-blue-hover);
+}
+
+.line-select {
+  padding: 6px 0;
+}
+.line-select__fields {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.line-select__field {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  transition: all var(--transition-duration);
+  font-weight: 600;
+}
+.line-select__field:hover {
+  color: var(--clr-accent-blue-hover);
+}
+.line-select__field input {
+  position: absolute;
+  visibility: hidden;
+}
+.line-select__field input:checked + .value {
+  color: var(--clr-accent-blue-hover);
+}
+.line-select__field .value {
+  transition: all var(--transition-duration);
+}
+
+.range-field {
+  font-weight: 500;
+}
+.range-field__values {
+  padding: 6px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.range-field__input {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 100%;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 0 18px;
+  left: 0;
+}
+.range-field__input input {
+  width: 100%;
+  position: absolute;
+  visibility: hidden;
+}
+.range-field__line {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  height: 2px;
+  background: var(--clr-accent-blue-hover);
+}
+.range-field__line .before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--clr-accent-blue-hover);
+  cursor: pointer;
+  left: 0%;
+  transition: all 0.3s;
+}
+.range-field__line .before:hover {
+  transform: scale(1.5);
+}
+.range-field__line .after {
+  position: absolute;
+  width: 8px;
+  right: 0%;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--clr-accent-blue-hover);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.range-field__line .after:hover {
+  transform: scale(1.5);
+}
+
+.slide-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  font-weight: 600;
+}
+.slide-field__input {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: 1px solid var(--clr-gray);
+  border-radius: 16px;
+  padding: 2px;
+  gap: 2px;
+  justify-content: space-between;
+  width: 34px;
+  cursor: pointer;
+}
+.slide-field__input.active {
+  border-color: var(--clr-accent-blue-hover);
+}
+.slide-field__input .radio {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--clr-gray);
+  position: relative;
+  transform: translateX(0);
+  transition: all 0.2s;
+}
+.slide-field__input input {
+  visibility: hidden;
+  cursor: pointer;
+  position: absolute;
+  height: 16px;
+  position: absolute;
+}
+.slide-field__input input:checked + .radio {
+  transform: translateX(100%);
+  background: var(--clr-accent-blue-hover);
+  right: 2px;
 }
