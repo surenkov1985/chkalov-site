@@ -29,6 +29,7 @@
 	<!-- libs -->
 	<link rel="stylesheet" href="libs/fancybox/style.css">
 	<link rel="stylesheet" href="libs/swiper/swiper-bundle.css">
+	<link rel="stylesheet" href="libs/jquery/jqueryUI.css">
 	<!--  -->
 	<link rel="stylesheet" href="css/vars.css">
 	<link rel="stylesheet" href="css/general.css">
@@ -764,16 +765,18 @@
 								</div>
 								<div class="filter__form_field">
 									<span class="dropdown__title xs-font">Этаж</span>
-									<div class="range-field">
+									<div class="range-field fill-range">
 										<div class="range-field__values">
-											<div class="range-field__value-min">1</div>
-											<div class="range-field__value-max">32</div>
+											<div class="range-field__value-min"><input type="text" name="fill-min"
+													class="polzunok-input-5-left" /><span class="value"></span></div>
+											<div class="range-field__value-max"><input type="text" name="fill-max"
+													class="polzunok-input-5-right " /><span class="value"></span></div>
+
+
 										</div>
 										<div class="range-field__input">
-											<input type="range" name="fill" min="1" max="32" step="1">
 											<div class="range-field__line">
-												<div class="before"></div>
-												<div class="after"></div>
+												<div class="polzunok-5"></div>
 											</div>
 										</div>
 
@@ -781,16 +784,20 @@
 								</div>
 								<div class="filter__form_field">
 									<span class="dropdown__title xs-font">Площадь, м2</span>
-									<div class="range-field">
+									<div class="range-field place-range">
 										<div class="range-field__values">
-											<div class="range-field__value-min">49</div>
-											<div class="range-field__value-max">150</div>
+											<div class="range-field__value-min"><input type="text" name="place-min"
+													class="polzunok-input-5-left" />
+												<span class="value"></span>
+											</div>
+											<div class="range-field__value-max"><input type="text" name="place-max"
+													class="polzunok-input-5-right " />
+												<span class="value"></span>
+											</div>
 										</div>
 										<div class="range-field__input">
-											<input type="range" name="place" min="49" max="150" step="1">
 											<div class="range-field__line">
-												<div class="before"></div>
-												<div class="after"></div>
+												<div class="polzunok-5"></div>
 											</div>
 										</div>
 
@@ -798,16 +805,16 @@
 								</div>
 								<div class="filter__form_field">
 									<span class="dropdown__title xs-font">Стоимость, млн.₽</span>
-									<div class="range-field">
+									<div class="range-field price-range">
 										<div class="range-field__values">
-											<div class="range-field__value-min">33,7</div>
-											<div class="range-field__value-max">70,2</div>
+											<div class="range-field__value-min"><input type="text" name="price-min"
+													class="polzunok-input-5-left" /><span class="value"></span></div>
+											<div class="range-field__value-max"><input type="text" name="price-max"
+													class="polzunok-input-5-right " /><span class="value"></span></div>
 										</div>
 										<div class="range-field__input">
-											<input type="range" name="price" min="33.7" max="70.2" step="0.1">
 											<div class="range-field__line">
-												<div class="before"></div>
-												<div class="after"></div>
+												<div class="polzunok-5"></div>
 											</div>
 										</div>
 
@@ -894,13 +901,253 @@
 								</div>
 							</div>
 						</form>
+						<div class="aparts__filter_result">
+							<button class="btn btn-with-icon aparts__filter_hidden">
+								<svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M9.5 17.7188C7.97338 17.7188 6.48104 17.2661 5.2117 16.4179C3.94235 15.5698 2.95302 14.3643 2.36881 12.9538C1.78459 11.5434 1.63174 9.99144 1.92957 8.49415C2.2274 6.99686 2.96254 5.62151 4.04202 4.54202C5.12151 3.46253 6.49686 2.72739 7.99415 2.42956C9.49144 2.13173 11.0434 2.28459 12.4538 2.8688C13.8643 3.45302 15.0698 4.44235 15.9179 5.71169C16.7661 6.98104 17.2188 8.47338 17.2188 10C17.2166 12.0465 16.4027 14.0085 14.9556 15.4556C13.5085 16.9027 11.5465 17.7166 9.5 17.7188ZM9.5 3.46875C8.20824 3.46875 6.94549 3.8518 5.87144 4.56946C4.79738 5.28713 3.96025 6.30717 3.46592 7.5006C2.97158 8.69403 2.84224 10.0072 3.09425 11.2742C3.34626 12.5411 3.9683 13.7049 4.88171 14.6183C5.79512 15.5317 6.95888 16.1537 8.22582 16.4058C9.49276 16.6578 10.806 16.5284 11.9994 16.0341C13.1928 15.5398 14.2129 14.7026 14.9305 13.6286C15.6482 12.5545 16.0313 11.2918 16.0313 10C16.0293 8.26841 15.3405 6.6083 14.1161 5.38388C12.8917 4.15946 11.2316 3.47071 9.5 3.46875ZM12.8888 11.6076C12.944 11.5524 12.9878 11.487 13.0177 11.4149C13.0476 11.3428 13.063 11.2655 13.063 11.1875C13.063 11.1095 13.0476 11.0322 13.0177 10.9601C12.9878 10.888 12.944 10.8226 12.8888 10.7674L9.92008 7.79867C9.86494 7.74347 9.79945 7.69967 9.72737 7.66979C9.65529 7.63991 9.57803 7.62453 9.5 7.62453C9.42198 7.62453 9.34471 7.63991 9.27263 7.66979C9.20055 7.69967 9.13507 7.74347 9.07993 7.79867L6.11118 10.7674C5.99976 10.8788 5.93717 11.0299 5.93717 11.1875C5.93717 11.3451 5.99976 11.4962 6.11118 11.6076C6.22259 11.719 6.37369 11.7816 6.53125 11.7816C6.68881 11.7816 6.83992 11.719 6.95133 11.6076L9.5 9.05816L12.0487 11.6076C12.1038 11.6628 12.1693 11.7066 12.2414 11.7365C12.3135 11.7663 12.3907 11.7817 12.4688 11.7817C12.5468 11.7817 12.624 11.7663 12.6961 11.7365C12.7682 11.7066 12.8337 11.6628 12.8888 11.6076Z"
+										fill="#464646" />
+								</svg>
+								Скрыть фильтр
+
+							</button>
+							<div class="aparts__filter_result-num">Нашлось 52 квартиры</div>
+							<button class="btn btn-with-icon aparts__filter_reset">
+								<svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M12.2951 8.04508L10.3394 10L12.2951 11.9549C12.3502 12.0101 12.394 12.0756 12.4239 12.1477C12.4537 12.2197 12.4691 12.297 12.4691 12.375C12.4691 12.453 12.4537 12.5303 12.4239 12.6023C12.394 12.6744 12.3502 12.7399 12.2951 12.7951C12.2399 12.8502 12.1744 12.894 12.1023 12.9239C12.0303 12.9537 11.953 12.9691 11.875 12.9691C11.797 12.9691 11.7197 12.9537 11.6477 12.9239C11.5756 12.894 11.5101 12.8502 11.4549 12.7951L9.5 10.8394L7.54508 12.7951C7.48992 12.8502 7.42443 12.894 7.35235 12.9239C7.28027 12.9537 7.20302 12.9691 7.125 12.9691C7.04699 12.9691 6.96974 12.9537 6.89766 12.9239C6.82558 12.894 6.76009 12.8502 6.70493 12.7951C6.64976 12.7399 6.606 12.6744 6.57614 12.6023C6.54629 12.5303 6.53092 12.453 6.53092 12.375C6.53092 12.297 6.54629 12.2197 6.57614 12.1477C6.606 12.0756 6.64976 12.0101 6.70493 11.9549L8.66059 10L6.70493 8.04508C6.59351 7.93367 6.53092 7.78256 6.53092 7.625C6.53092 7.46744 6.59351 7.31633 6.70493 7.20492C6.81634 7.09351 6.96744 7.03092 7.125 7.03092C7.28256 7.03092 7.43367 7.09351 7.54508 7.20492L9.5 9.16059L11.4549 7.20492C11.5101 7.14976 11.5756 7.106 11.6477 7.07614C11.7197 7.04629 11.797 7.03092 11.875 7.03092C11.953 7.03092 12.0303 7.04629 12.1023 7.07614C12.1744 7.106 12.2399 7.14976 12.2951 7.20492C12.3502 7.26009 12.394 7.32558 12.4239 7.39766C12.4537 7.46973 12.4691 7.54698 12.4691 7.625C12.4691 7.70302 12.4537 7.78027 12.4239 7.85234C12.394 7.92442 12.3502 7.98991 12.2951 8.04508ZM17.2188 10C17.2188 11.5266 16.7661 13.019 15.9179 14.2883C15.0698 15.5576 13.8643 16.547 12.4538 17.1312C11.0434 17.7154 9.49144 17.8683 7.99415 17.5704C6.49686 17.2726 5.12151 16.5375 4.04202 15.458C2.96254 14.3785 2.2274 13.0031 1.92957 11.5059C1.63174 10.0086 1.78459 8.45658 2.36881 7.04616C2.95302 5.63574 3.94235 4.43024 5.2117 3.58209C6.48104 2.73395 7.97338 2.28125 9.5 2.28125C11.5465 2.28341 13.5085 3.09733 14.9556 4.54441C16.4027 5.99148 17.2166 7.95352 17.2188 10ZM16.0313 10C16.0313 8.70824 15.6482 7.44549 14.9305 6.37143C14.2129 5.29737 13.1928 4.46025 11.9994 3.96591C10.806 3.47158 9.49276 3.34224 8.22582 3.59425C6.95888 3.84626 5.79512 4.4683 4.88171 5.38171C3.9683 6.29512 3.34626 7.45888 3.09425 8.72582C2.84224 9.99275 2.97158 11.306 3.46592 12.4994C3.96025 13.6928 4.79738 14.7129 5.87144 15.4305C6.94549 16.1482 8.20824 16.5312 9.5 16.5312C11.2316 16.5293 12.8917 15.8405 14.1161 14.6161C15.3405 13.3917 16.0293 11.7316 16.0313 10Z"
+										fill="#464646" />
+								</svg>
+								Сбросить фильтр
+							</button>
+						</div>
+					</div>
+					<div class="aparts__list">
+						<a href="/apart.html" class="aparts__item">
+							<div class="aparts__item_img">
+								<img src="/images/apart-sheme.png" alt="Схема квартиры">
+							</div>
+							<div class="aparts__item_content">
+								<h4 class="h4">2-комнатная</h4>
+								<div class="aparts__item_desc">
+									<p class="light-text sm-font">
+										<span class="title">Площадь</span>
+										<span class="value">49 м2</span>
+									</p>
+									<p class="light-text sm-font">
+										<span class="title">Этаж</span>
+										<span class="value">5/32</span>
+									</p>
+									<p class="light-text sm-font">
+										<span class="title">Отделка</span>
+										<span class="value">Классика</span>
+									</p>
+								</div>
+								<div class="aparts__item_price">
+									<p class="old-price light-text xs-font">32 900 000 ₽</p>
+									<p class="new-price">33 700 000 ₽</p>
+								</div>
+							</div>
+						</a>
+						<a href="/apart.html" class="aparts__item">
+							<div class="aparts__item_img">
+								<img src="/images/apart-sheme.png" alt="Схема квартиры">
+							</div>
+							<div class="aparts__item_content">
+								<h4 class="h4">2-комнатная</h4>
+								<div class="aparts__item_desc">
+									<p class="light-text sm-font">
+										<span class="title">Площадь</span>
+										<span class="value">49 м2</span>
+									</p>
+									<p class="light-text sm-font">
+										<span class="title">Этаж</span>
+										<span class="value">5/32</span>
+									</p>
+									<p class="light-text sm-font">
+										<span class="title">Отделка</span>
+										<span class="value">Классика</span>
+									</p>
+								</div>
+								<div class="aparts__item_price">
+									<p class="old-price light-text xs-font">32 900 000 ₽</p>
+									<p class="new-price">33 700 000 ₽</p>
+								</div>
+							</div>
+						</a>
+						<a href="/apart.html" class="aparts__item">
+							<div class="aparts__item_img">
+								<img src="/images/apart-sheme.png" alt="Схема квартиры">
+							</div>
+							<div class="aparts__item_content">
+								<h4 class="h4">2-комнатная</h4>
+								<div class="aparts__item_desc">
+									<p class="light-text sm-font">
+										<span class="title">Площадь</span>
+										<span class="value">49 м2</span>
+									</p>
+									<p class="light-text sm-font">
+										<span class="title">Этаж</span>
+										<span class="value">5/32</span>
+									</p>
+									<p class="light-text sm-font">
+										<span class="title">Отделка</span>
+										<span class="value">Классика</span>
+									</p>
+								</div>
+								<div class="aparts__item_price">
+									<p class="old-price light-text xs-font">32 900 000 ₽</p>
+									<p class="new-price">33 700 000 ₽</p>
+								</div>
+							</div>
+						</a>
+						<a href="/apart.html" class="aparts__item">
+							<div class="aparts__item_img">
+								<img src="/images/apart-sheme.png" alt="Схема квартиры">
+							</div>
+							<div class="aparts__item_content">
+								<h4 class="h4">2-комнатная</h4>
+								<div class="aparts__item_desc">
+									<p class="light-text sm-font">
+										<span class="title">Площадь</span>
+										<span class="value">49 м2</span>
+									</p>
+									<p class="light-text sm-font">
+										<span class="title">Этаж</span>
+										<span class="value">5/32</span>
+									</p>
+									<p class="light-text sm-font">
+										<span class="title">Отделка</span>
+										<span class="value">Классика</span>
+									</p>
+								</div>
+								<div class="aparts__item_price">
+									<p class="old-price light-text xs-font">32 900 000 ₽</p>
+									<p class="new-price">33 700 000 ₽</p>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="aparts__more">
+						<button class="btn btn-secondary aparts__more_btn">показать ещё</button>
 					</div>
 				</div>
 			</section>
 			<!-- END APARTS -->
 
 			<!-- CALC -->
-			<section id="calc" class="section section_white calc"></section>
+			<section id="calc" class="section section_white calc">
+				<div class="container">
+					<h2 class="h2">Рассчитайте свой платёж по ипотеке</h2>
+					<div class="calc__form">
+						<div class="calc__form_fields">
+							<div class="filter__form_field">
+								<span class="dropdown__title xs-font">Стоимость, ₽</span>
+								<div class="range-field place-range">
+									<div class="range-field__values">
+										<div class="range-field__value-min"><input type="text" name="place-min"
+												class="polzunok-input-5-left" />
+											<span class="value"></span>
+										</div>
+										<div class="range-field__value-max"><input type="text" name="place-max"
+												class="polzunok-input-5-right " />
+											<span class="value"></span>
+										</div>
+									</div>
+									<div class="range-field__input">
+										<div class="range-field__line">
+											<div class="polzunok-5"></div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="filter__form_field">
+								<span class="dropdown__title xs-font">Первоначальный взнос, ₽</span>
+								<div class="range-field place-range">
+									<div class="range-field__values">
+										<div class="range-field__value-min"><input type="text" name="place-min"
+												class="polzunok-input-5-left" />
+											<span class="value"></span>
+										</div>
+										<div class="range-field__value-max"><input type="text" name="place-max"
+												class="polzunok-input-5-right " />
+											<span class="value"></span>
+										</div>
+									</div>
+									<div class="range-field__input">
+										<div class="range-field__line">
+											<div class="polzunok-5"></div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="filter__form_field">
+								<span class="dropdown__title xs-font">Срок, лет</span>
+								<div class="range-field place-range">
+									<div class="range-field__values">
+										<div class="range-field__value-min"><input type="text" name="place-min"
+												class="polzunok-input-5-left" />
+											<span class="value"></span>
+										</div>
+										<div class="range-field__value-max"><input type="text" name="place-max"
+												class="polzunok-input-5-right " />
+											<span class="value"></span>
+										</div>
+									</div>
+									<div class="range-field__input">
+										<div class="range-field__line">
+											<div class="polzunok-5"></div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="calc__res">
+							<div class="calc__res_price">
+								<h3 class="h3">Ипотека 8%</h3>
+								<p>
+									<span class="main-font">Стоимость квартиры:</span> <span class="price">10 329 999</span>
+								</p>
+							</div>
+							<div class="calc__res_fields">
+								<div class="calc__res_field">
+									<p class="light-text">Срок кредита</p>
+									<p class="value">20 лет</p>
+								</div>
+								<div class="calc__res_field">
+									<p class="light-text">Ежемесячный платёж</p>
+									<p class="value">30 458 ₽ / мес.</p>
+								</div>
+								<div class="calc__res_field">
+									<p class="light-text">Переплата</p>
+									<p class="value">5 245 854 ₽</p>
+								</div>
+							</div>
+						</div>
+						<div class="calc__res_subtext xs-font light-text">
+							Приведенные расчеты носят предварительный характер. Окончательный расчет суммы кредита и размер
+							ежемесячного платежа производятся банком после предоставления полного комплекта документов
+						</div>
+						<div class="calc__resp">
+							<button class="btn btn-color" data-fancybox data-src="">Подать заявку</button>
+						</div>
+					</div>
+					<div class="calc__developer">
+						<div class="calc__developer_info">
+							<a href="#">
+								<img src="/images/дом.рф.png" alt="">
+							</a>
+						</div>
+						<div class="calc__developer_img">
+							<img src="/images/developer-image.png" alt="">
+						</div>
+					</div>
+
+				</div>
+			</section>
 			<!-- END CALC -->
 
 			<!-- DEVELOPER -->
@@ -1190,6 +1437,8 @@
 	<script src="/libs/swiper/swiper.js"></script>
 	<script src="/libs/fancybox/script.js"></script>
 	<script src="/libs/jquery/jquery.js"></script>
+	<script src="/libs/jquery/jqueryUI.js"></script>
+	<script src="/libs/jquery/jqueryUITouchPunch.js"></script>
 	<script src="/js/methods.js"></script>
 	<script src="/js/swipers.js"></script>
 	<script src="/js/scripts.js"></script>

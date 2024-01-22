@@ -225,6 +225,11 @@ h4.h4-regular,
   font-weight: 400;
 }
 
+.main-font {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
 .sm-font {
   font-size: 0.875rem;
 }

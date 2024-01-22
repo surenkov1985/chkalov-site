@@ -8,6 +8,7 @@
 	text-transform: uppercase;
 	cursor: pointer;
 	transition: all var(--transition-duration);
+	font-family: var(--main-font);
 
 	&-secondary {
 		color: var(--clr-gray);
@@ -56,6 +57,26 @@
 
 			&::after {
 				left: calc(100% + 100px);
+			}
+		}
+	}
+
+	&-with-icon {
+		gap: 8px;
+		text-transform: capitalize;
+		font-weight: 600;
+		color: var(--clr-accent);
+		font-size: 1rem;
+
+		& svg path {
+			transition: all var(--transition-duration);
+		}
+
+		&:hover {
+			color: var(--clr-accent-blue-hover);
+
+			& svg path {
+				fill: var(--clr-accent-blue-hover);
 			}
 		}
 	}
