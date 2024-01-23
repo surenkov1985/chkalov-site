@@ -209,6 +209,12 @@
 
 			<!-- ABOUT -->
 			<section id="about" class="section section_white about">
+				<div class="about__decor_left">
+					<img src="/images/pngwing 7(4).png" alt="">
+				</div>
+				<div class="about__decor_right">
+					<img src="/images/pngwing 7(3).png" alt="">
+				</div>
 				<div class="container">
 					<h2 class="h2">О жилом комплексе</h2>
 					<h4 class="about__desc h4-regular">
@@ -636,7 +642,7 @@
 				<div class="container">
 					<div class="feedback__content">
 						<form action="" class="feedback__form" id="present">
-							<div class="form__content">
+							<div class="form__content active">
 								<div class="feedback__form_title">
 									<h2 class="h2">Получить презентацию ЖК «Чкаlov»</h2>
 								</div>
@@ -712,6 +718,22 @@
 											Нажимая на кнопку Вы принимаете условия политики конфиденциальности
 										</span>
 									</label>
+								</div>
+							</div>
+							<div class="form__success">
+								<div class="form__success_img">
+									<svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<circle cx="13" cy="13" r="13" fill="#ffae83" />
+										<path d="M7.80005 13.4333L11.7 17.3333L19.9334 9.09998" stroke="#f5f6fb"
+											stroke-width="2" />
+									</svg>
+
+								</div>
+								<h3 class="h3">Данные успешно отправлены</h3>
+								<div class="text text-center">
+									<h4 class="h4">Наш менеджер свяжется с вами в
+										ближайшее время</h4>
 								</div>
 							</div>
 						</form>
@@ -1155,7 +1177,7 @@
 							ежемесячного платежа производятся банком после предоставления полного комплекта документов
 						</div>
 						<div class="calc__resp">
-							<button class="btn btn-color" data-fancybox data-src="">Подать заявку</button>
+							<button class="btn btn-color" data-fancybox data-src="#modal_recall">Подать заявку</button>
 						</div>
 					</div>
 					<div class="calc__developer">
@@ -1436,7 +1458,7 @@
 				<div class="container">
 					<div class="feedback__content">
 						<form action="" class="feedback__form" id="recall">
-							<div class="form__content">
+							<div class="form__content active">
 								<div class="feedback__form_title">
 									<h2 class="h2">Нужна более подробная информация?</h2>
 								</div>
@@ -1490,6 +1512,22 @@
 											Нажимая на кнопку Вы принимаете условия политики конфиденциальности
 										</span>
 									</label>
+								</div>
+							</div>
+							<div class="form__success">
+								<div class="form__success_img">
+									<svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<circle cx="13" cy="13" r="13" fill="#ffae83" />
+										<path d="M7.80005 13.4333L11.7 17.3333L19.9334 9.09998" stroke="#f5f6fb"
+											stroke-width="2" />
+									</svg>
+
+								</div>
+								<h3 class="h3">Данные успешно отправлены</h3>
+								<div class="text text-center">
+									<h4 class="h4">Наш менеджер свяжется с вами в
+										ближайшее время</h4>
 								</div>
 							</div>
 						</form>
@@ -1769,6 +1807,83 @@
 						</nav>
 					</div>
 				</div>
+			</div>
+		</div>
+
+		<div class="modal">
+			<div class="feedback__content" id="modal_recall">
+				<form action="" class="feedback__form" id="modal_recall_form">
+					<div class="form__content active">
+						<div class="feedback__form_title">
+							<h2 class="h2">Нужна более подробная информация?</h2>
+						</div>
+						<div class="feedback__form_subtitle">
+							<h4 class="h4-regular">Оставьте заявку и наши менеджеры свяжутся с вами в течение 15 минут
+								и ответят на все интересующие вопросы</h4>
+						</div>
+						<div class="feedback__form_fields">
+							<label class="feedback__form_label">
+								<span class="icon">
+									<svg width="23" height="22" viewBox="0 0 23 22" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M18.4282 17.72C18.3809 17.8052 18.3129 17.8759 18.231 17.925C18.1492 17.9742 18.0563 18 17.9617 18H5.03794C4.94346 17.9999 4.85067 17.974 4.76889 17.9248C4.6871 17.8756 4.6192 17.8049 4.57201 17.7198C4.52481 17.6347 4.49998 17.5382 4.5 17.4399C4.50002 17.3417 4.52491 17.2452 4.57214 17.1601C5.5973 15.3173 7.17709 13.9958 9.02075 13.3694C8.1088 12.8049 7.40026 11.9448 7.00396 10.921C6.60766 9.89728 6.5455 8.76658 6.82704 7.70255C7.10857 6.63852 7.71822 5.70001 8.56238 5.03113C9.40654 4.36225 10.4385 4 11.4998 4C12.5612 4 13.5931 4.36225 14.4373 5.03113C15.2814 5.70001 15.8911 6.63852 16.1726 7.70255C16.4542 8.76658 16.392 9.89728 15.9957 10.921C15.5994 11.9448 14.8909 12.8049 13.9789 13.3694C15.8226 13.9958 17.4024 15.3173 18.4275 17.1601C18.4749 17.2452 18.4999 17.3417 18.5 17.44C18.5001 17.5383 18.4754 17.6349 18.4282 17.72Z"
+											fill="#8B8FA2"
+											style="fill:#8B8FA2;fill:color(display-p3 0.5451 0.5608 0.6353);fill-opacity:1;" />
+									</svg>
+								</span>
+								<input type="text" name="name" class="input" placeholder="Ваше имя">
+								<span class="border"></span>
+							</label>
+							<label class="feedback__form_label">
+								<span class="icon">
+									<svg width="15" height="14" viewBox="0 0 15 14" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M14.1329 10.2746L12.175 8.32084C11.4758 7.62307 10.2871 7.90221 10.0074 8.80927C9.79764 9.43729 9.0984 9.78617 8.46909 9.64659C7.07063 9.29771 5.1827 7.48352 4.83308 6.01822C4.62331 5.3902 5.04285 4.69244 5.67216 4.48313C6.58116 4.20403 6.86086 3.01783 6.16162 2.32007L4.20377 0.366326C3.64439 -0.122109 2.80531 -0.122109 2.31584 0.366326L0.9873 1.69208C-0.341242 3.08761 1.12715 6.78576 4.41354 10.0652C7.69994 13.3447 11.4059 14.8798 12.8043 13.4843L14.1329 12.1585C14.6224 11.6003 14.6224 10.763 14.1329 10.2746Z"
+											fill="#8B8FA2"
+											style="fill:#8B8FA2;fill:color(display-p3 0.5451 0.5608 0.6353);fill-opacity:1;" />
+									</svg>
+								</span>
+								<input type="tel" name="tel" class="input" placeholder="+7 (___) ___-__-__">
+								<span class="border"></span>
+							</label>
+						</div>
+						<div class="feedback__form_bottom">
+							<button type="submit" class="btn btn-color">Оставить заявку</button>
+						</div>
+						<div class="feedback__form_agree">
+							<label class="agree">
+								<input type="checkbox" name="agree" value="ok" checked>
+								<span class="checkbox">
+									<svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path d="M1 5L4 8L11 1" stroke="#8B8FA2"
+											style="stroke:#8B8FA2;stroke:color(display-p3 0.5451 0.5608 0.6353);stroke-opacity:1;"
+											stroke-width="2" stroke-linecap="round" />
+									</svg>
+								</span>
+								<span class="text light-text xs-font">
+									Нажимая на кнопку Вы принимаете условия политики конфиденциальности
+								</span>
+							</label>
+						</div>
+					</div>
+					<div class="form__success">
+						<div class="form__success_img">
+							<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<circle cx="13" cy="13" r="13" fill="#ffae83" />
+								<path d="M7.80005 13.4333L11.7 17.3333L19.9334 9.09998" stroke="#f5f6fb" stroke-width="2" />
+							</svg>
+
+						</div>
+						<h3 class="h3">Данные успешно отправлены</h3>
+						<div class="text text-center">
+							<h4 class="h4">Наш менеджер свяжется с вами в
+								ближайшее время</h4>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

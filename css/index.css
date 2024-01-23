@@ -152,6 +152,18 @@
 
 .about {
   overflow: hidden;
+  position: relative;
+}
+.about__decor_left, .about__decor_right {
+  position: absolute;
+}
+.about__decor_left {
+  left: 0;
+  bottom: 100px;
+}
+.about__decor_right {
+  top: 100px;
+  right: 0;
 }
 .about__desc {
   max-width: 700px;
@@ -241,6 +253,8 @@
   display: flex;
   gap: var(--gap);
   margin-top: 68px;
+  position: relative;
+  z-index: 1;
 }
 .about__item {
   width: calc(25% - var(--gap) / 2);
@@ -444,6 +458,13 @@
   margin-left: auto;
   margin-right: auto;
 }
+.feedback__form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .feedback__form_title {
   text-align: center;
   margin-bottom: 22px;
@@ -580,6 +601,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  visibility: hidden;
+}
+.form__content.active {
+  visibility: visible;
 }
 
 .aparts .h2 {
