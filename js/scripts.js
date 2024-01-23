@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	aboutSlider();
 	finishingsSlider();
+	developerSliders();
 
 	$(document).on("click", ".head__burger_btn", function () {
 		openMobile();
@@ -119,153 +120,66 @@ document.addEventListener("DOMContentLoaded", function () {
 		mousedown = false;
 	})
 
-	$(".fill-range .range-field__line").slider({
-		min: 1,
-		max: 32,
-		values: [1, 32],
-		range: true,
-		animate: "fast",
-		slide: function (event, ui) {
-			$(".fill-range .polzunok-input-5-left").val(ui.values[0]);
-			$(".fill-range .polzunok-input-5-right").val(ui.values[1]);
-		}
-	})
+	changeRangeSlider(".fill-range", 1, 32, 0.1);
+	changeRangeSlider(".place-range", 49, 150, 1);
+	changeRangeSlider(".price-range", 33.7, 100.2, 0.1);
 
-	$(".fill-range .polzunok-input-5-left").val($(".fill-range .range-field__line").slider("values", 0));
-	$(".fill-range .polzunok-input-5-right").val($(".fill-range .range-field__line").slider("values", 1));
-	$(".fill-range input").change(function () {
-		var input_left = $(".fill-range .polzunok-input-5-left").val().replace(/[^0-9]/g, ''),
-			opt_left = $(".fill-range .range-field__line").slider("option", "min"),
-			where_right = $(".fill-range .range-field__line").slider("values", 1),
-			input_right = $(".fill-range .polzunok-input-5-right").val().replace(/[^0-9]/g, ''),
-			opt_right = $(".fill-range .range-field__line").slider("option", "max"),
-			where_left = $(".fill-range .range-field__line").slider("values", 0);
-		if (input_left > where_right) {
-			input_left = where_right;
-		}
-		if (input_left < opt_left) {
-			input_left = opt_left;
-		}
-		if (input_left == "") {
-			input_left = 0;
-		}
-		if (input_right < where_left) {
-			input_right = where_left;
-		}
-		if (input_right > opt_right) {
-			input_right = opt_right;
-		}
-		if (input_right == "") {
-			input_right = 0;
-		}
-		$(".fill-range .polzunok-input-5-left").val(input_left);
-		$(".fill-range .polzunok-input-5-right").val(input_right);
-		if (input_left != where_left) {
-			$(".fill-range .range-field__line").slider("values", 0, input_left);
-		}
-		if (input_right != where_right) {
-			$(".fill-range .range-field__line").slider("values", 1, input_right);
-		}
-	});
+	function changeRangeSlider(slider, minVal = 1, maxVal, step = 1) {
 
-	$(".place-range .range-field__line").slider({
-		min: 49,
-		max: 150,
-		values: [50, 149],
-		range: true,
-		animate: "fast",
-		slide: function (event, ui) {
-			$(".place-range .polzunok-input-5-left").val(ui.values[0]);
-			$(".place-range .polzunok-input-5-right").val(ui.values[1]);
-		}
-	});
+		if (!document.querySelector(slider)) return;
 
-	$(".place-range .polzunok-input-5-left").val($(".place-range .range-field__line").slider("values", 0));
-	$(".place-range .polzunok-input-5-right").val($(".place-range .range-field__line").slider("values", 1));
-	$(".place-range .place-range input").change(function () {
-		var input_left = $(".place-range .polzunok-input-5-left").val().replace(/[^0-9]/g, ''),
-			opt_left = $(".place-range .place-range .range-field__line").slider("option", "min"),
-			where_right = $(".place-range .place-range .range-field__line").slider("values", 1),
-			input_right = $(".place-range .polzunok-input-5-right").val().replace(/[^0-9]/g, ''),
-			opt_right = $(".place-range .place-range .range-field__line").slider("option", "max"),
-			where_left = $(".place-range .range-field__line").slider("values", 0);
-		if (input_left > where_right) {
-			input_left = where_right;
-		}
-		if (input_left < opt_left) {
-			input_left = opt_left;
-		}
-		if (input_left == "") {
-			input_left = 0;
-		}
-		if (input_right < where_left) {
-			input_right = where_left;
-		}
-		if (input_right > opt_right) {
-			input_right = opt_right;
-		}
-		if (input_right == "") {
-			input_right = 0;
-		}
-		$(".place-range .polzunok-input-5-left").val(input_left);
-		$(".place-range .polzunok-input-5-right").val(input_right);
-		if (input_left != where_left) {
-			$(".place-range .range-field__line").slider("values", 0, input_left);
-		}
-		if (input_right != where_right) {
-			$(".place-range .range-field__line").slider("values", 1, input_right);
-		}
-	});
+		$(slider).find(".range-field__line").slider({
+			min: minVal,
+			max: maxVal,
+			values: [minVal, maxVal],
+			step: step,
+			range: true,
+			animate: "fast",
+			slide: function (event, ui) {
+				$(slider).find(".polzunok-input-5-left").val(ui.values[0]);
+				$(slider).find(".polzunok-input-5-right").val(ui.values[1]);
+			}
+		});
 
-	$(".price-range .range-field__line").slider({
-		min: 33.7,
-		max: 100.2,
-		values: [33.7, 70.2],
-		step: 0.1,
-		range: true,
-		animate: "fast",
-		slide: function (event, ui) {
-			$(".price-range .polzunok-input-5-left").val(ui.values[0]);
-			$(".price-range .polzunok-input-5-right").val(ui.values[1]);
-		}
-	});
+		$(slider).find(".polzunok-input-5-left").val($(slider).find(".range-field__line").slider("values", 0));
+		$(slider).find(".polzunok-input-5-right").val($(slider).find(".range-field__line").slider("values", 1));
+		$(slider).find("input").change(function () {
+			let input_left = $(slider).find(".polzunok-input-5-left").val().replace(/[^0-9]/g, ''),
+				opt_left = $(slider).find(".range-field__line").slider("option", "min"),
+				where_right = $(slider).find(".range-field__line").slider("values", 1),
+				input_right = $(slider).find(".polzunok-input-5-right").val().replace(/[^0-9]/g, ''),
+				opt_right = $(slider).find(".range-field__line").slider("option", "max"),
+				where_left = $(slider).find(".range-field__line").slider("values", 0);
+			if (input_left > where_right) {
+				input_left = where_right;
+			}
+			if (input_left < opt_left) {
+				input_left = opt_left;
+			}
+			if (input_left == "") {
+				input_left = 0;
+			}
+			if (input_right < where_left) {
+				input_right = where_left;
+			}
+			if (input_right > opt_right) {
+				input_right = opt_right;
+			}
+			if (input_right == "") {
+				input_right = 0;
+			}
+			$(slider).find(".polzunok-input-5-left").val(input_left);
+			$(slider).find(".polzunok-input-5-right").val(input_right);
+			if (input_left != where_left) {
+				$(slider).find(".range-field__line").slider("values", 0, input_left);
+			}
+			if (input_right != where_right) {
+				$(slider).find(".range-field__line").slider("values", 1, input_right);
+			}
+		});
 
-	$(".price-range .polzunok-input-5-left").val($(".price-range .range-field__line").slider("values", 0));
-	$(".price-range .polzunok-input-5-right").val($(".price-range .range-field__line").slider("values", 1));
-	$(".price-range input").change(function () {
-		var input_left = $(".price-range .polzunok-input-5-left").val().replace(/[^0-9]/g, ''),
-			opt_left = $(".price-range  .range-field__line").slider("option", "min"),
-			where_right = $(".price-range .range-field__line").slider("values", 1),
-			input_right = $(".price-range .polzunok-input-5-right").val().replace(/[^0-9]/g, ''),
-			opt_right = $(".price-range .range-field__line").slider("option", "max"),
-			where_left = $(".price-range .range-field__line").slider("values", 0);
-		if (input_left > where_right) {
-			input_left = where_right;
-		}
-		if (input_left < opt_left) {
-			input_left = opt_left;
-		}
-		if (input_left == "") {
-			input_left = 0;
-		}
-		if (input_right < where_left) {
-			input_right = where_left;
-		}
-		if (input_right > opt_right) {
-			input_right = opt_right;
-		}
-		if (input_right == "") {
-			input_right = 0;
-		}
-		$(".price-range .polzunok-input-5-left").val(input_left);
-		$(".price-range .polzunok-input-5-right").val(input_right);
-		if (input_left != where_left) {
-			$(".price-range .range-field__line").slider("values", 0, input_left);
-		}
-		if (input_right != where_right) {
-			$(".price-range .range-field__line").slider("values", 1, input_right);
-		}
-	});
+
+	}
 
 	$(document).on("click", ".aparts__filter_hidden", function () {
 
@@ -284,9 +198,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	$(document).on("click", ".aparts__filter_reset", function () {
 		const form = $(".aparts__filter_form");
-		const inputs = $(form).find("input").not("hidden");
 		const drops = $(form).find(".dropdown");
+
 		$(form).trigger('reset');
+
 		$(".price-range .polzunok-input-5-left").val($(".price-range .range-field__line").slider("option", "min")).change();
 		$(".price-range .polzunok-input-5-right").val($(".price-range .range-field__line").slider("option", "max")).change();
 		$(".place-range .polzunok-input-5-left").val($(".place-range .range-field__line").slider("option", "min")).change();
@@ -297,14 +212,41 @@ document.addEventListener("DOMContentLoaded", function () {
 		$(drops).each(function (_, dropdown) {
 			const dropdownItem = $(dropdown).find(".dropdown__item")[0];
 			const value = $(dropdownItem).find(".value").text();
-			const input = $(dropdownItem).find("input")
+			const input = $(dropdownItem).find("input");
 
 			$(dropdown).find(".dropdown__value>.value").text(value);
-			// $(input).checked();
-		})
+		});
+	});
 
-		console.log($(form));
+	const accordionItems = document.querySelectorAll(".accordion-item");
 
-		// $(inputs)
-	})
+	accordionItems.forEach((item, index) => {
+		const AccHeader = item.querySelector(".accordion-header");
+		const AccContent = item.querySelector(".accordion-content");
+		// const AccIcon = item.querySelector("svg use");
+
+		AccHeader.addEventListener("click", () => {
+			const isOpen = item.classList.contains("active");
+
+			accordionItems.forEach((item, i) => {
+				item.classList.remove("active");
+				item.querySelector(".accordion-content").style.maxHeight = "0";
+				// item.querySelector("svg use").setAttribute("href", "#accordion-open");
+			});
+
+			if (!isOpen) {
+				item.classList.add("active");
+				AccContent.style.maxHeight = AccContent.scrollHeight + "px";
+				// AccIcon.setAttribute("href", "#accordion-close");
+			} else {
+				// AccIcon.setAttribute("href", "#accordion-open");
+			}
+		});
+	});
+
+	if (accordionItems && accordionItems[1]) {
+		accordionItems[0].classList.add("active");
+		accordionItems[0].querySelector(".accordion-content").style.maxHeight = accordionItems[0].querySelector(".accordion-content").scrollHeight + "px";
+		// accordionItems[1].querySelector("svg use").setAttribute("href", "#accordion-close");
+	}
 });
