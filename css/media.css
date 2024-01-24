@@ -62,6 +62,16 @@
     left: 28%;
     top: 6%;
   }
+  .finishings__sliders {
+    padding: 0 100px;
+    width: 90%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .finishings__slider_false {
+    width: 90%;
+  }
 }
 @media (max-width: 1680px) {
   .fs__decor_left {
@@ -259,5 +269,11 @@
     position: absolute;
     left: 40%;
     top: 26%;
+  }
+  .about__decor_right {
+    top: 50px;
+  }
+  .about__decor_left {
+    bottom: 50px;
   }
 }

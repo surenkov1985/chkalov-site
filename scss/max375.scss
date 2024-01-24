@@ -11,4 +11,24 @@
 			padding: 15px 20px 20px;
 		}
 	}
+
+	// FEEDBACK 
+	.feedback {
+
+		&__content {
+			padding: 30px 20px;
+		}
+
+		&__form {
+
+			&_scls {
+				flex-wrap: wrap;
+
+				&-list {
+					width: 100%;
+					justify-content: space-between;
+				}
+			}
+		}
+	}
 }

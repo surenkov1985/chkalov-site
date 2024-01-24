@@ -20,6 +20,20 @@
   color: var(--clr-white);
   background: var(--clr-gray);
 }
+.btn-tab {
+  padding: 10px 15px;
+  border-radius: 42px;
+  border: 1px solid #898fa6;
+}
+.btn-tab:hover {
+  color: var(--clr-accent-blue-hover);
+  border-color: var(--clr-accent-blue-hover);
+}
+.btn-tab.active {
+  color: var(--clr-white);
+  background: var(--clr-accent-blue-hover);
+  border-color: var(--clr-accent-blue-hover);
+}
 .btn-color {
   color: var(--clr-white);
   background: var(--clr-gradient);
@@ -65,7 +79,21 @@
 .btn-with-icon:hover svg path {
   fill: var(--clr-accent-blue-hover);
 }
-
+.btn-circle {
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  border-radius: 50%;
+  background: #F5F6FC;
+  transition: all var(--transition-duration);
+  cursor: pointer;
+}
+.btn-circle svg path {
+  transition: all var(--transition-duration);
+}
+.btn-circle:hover {
+  background: #D9E0F3;
+}
 .container {
   width: 100%;
   max-width: calc(1200px + 8rem);
@@ -90,4 +118,24 @@
 
 .section_white {
   background: var(--clr-white);
+}
+
+.section_pb3 {
+  padding-bottom: 60px;
+}
+
+.section_pt4 {
+  padding-top: 80px;
+}
+
+.section_pt2 {
+  padding-top: 40px;
+}
+
+.section_pb0 {
+  padding-bottom: 0;
+}
+
+.section_pt0 {
+  padding-top: 0;
 }

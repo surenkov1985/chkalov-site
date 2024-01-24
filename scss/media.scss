@@ -83,6 +83,25 @@
 
 		}
 	}
+
+	// FINISHINGS
+
+	.finishings {
+
+		&__sliders {
+			padding: 0 100px;
+			width: 90%;
+			height: 100%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&__slider {
+			&_false {
+				width: 90%;
+			}
+		}
+	}
 }
 
 @media (max-width: 1680px) {
@@ -351,6 +370,20 @@
 			}
 
 
+		}
+	}
+
+	.about {
+
+		&__decor {
+
+			&_right {
+				top: 50px;
+			}
+
+			&_left {
+				bottom: 50px;
+			}
 		}
 	}
 }

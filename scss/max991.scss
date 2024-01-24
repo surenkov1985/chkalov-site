@@ -2,6 +2,22 @@
 
 	:root {
 		--cont-padding: 2.5rem;
+		--gap: 16px;
+	}
+
+	h1,
+	.h1 {
+		font-size: 2.75rem;
+	}
+
+	h2,
+	.h2 {
+		font-size: 2rem;
+	}
+
+	.section {
+		padding-top: 70px;
+		padding-bottom: 70px;
 	}
 
 	.head {
@@ -68,6 +84,187 @@
 					top: 20%;
 				}
 			}
+		}
+	}
+
+	// ABOUT
+
+	.about {
+
+		&__decor {
+
+			&_right {
+				top: 0px;
+
+			}
+
+			&_left {
+				bottom: 0;
+			}
+		}
+
+		&__desc {
+			margin-top: 20px;
+			margin-bottom: 50px;
+		}
+
+		&__slider {
+			height: 400px;
+
+			&_control {
+				margin-top: 45px;
+
+			}
+		}
+
+		&__slide.swiper-slide-active {
+			transform: scale(1.02);
+		}
+
+		&__list {
+			margin-top: 50px;
+		}
+
+		&__item {
+			padding: 16px;
+			// width: calc(30% - var(--gap) / 2);
+		}
+	}
+
+	// MAP
+
+	.map {
+
+		& .h2 {
+			margin-bottom: 40px;
+		}
+
+		&__content {
+			// height: 500px;
+			height: auto;
+			flex-direction: column-reverse;
+			gap: var(--gap);
+
+			& #main_map {
+				height: 500px;
+			}
+		}
+
+		&__points {
+			// left: 30px;
+			position: static;
+			padding: 30px 25px;
+			width: 100%;
+			max-width: none;
+
+			&_list {
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				gap: var(--gap);
+			}
+
+			&_item {
+				width: calc(50% - var(--gap) / 2);
+			}
+		}
+	}
+
+	// FINISHINGS
+
+	.finishings {
+
+		& .h2 {
+			margin-bottom: 40px;
+		}
+
+		&__sliders {
+			padding: 0 20px;
+			width: 80%;
+			gap: 20px;
+			flex-direction: column;
+			transform: scale(1);
+
+			&-container {
+				height: auto;
+			}
+		}
+
+		&__slider {
+			width: 100%;
+			height: 440px;
+
+			&_false {
+				width: calc(80% - 5px);
+				height: 440px;
+			}
+		}
+
+		&__slide {
+
+			&_title {
+				margin-bottom: 30px;
+				font-size: 26px;
+			}
+
+			&_text {
+				padding: 0 0 60px;
+			}
+
+			&_advs {
+				flex-direction: row;
+				gap: var(--gap);
+
+				&-item {
+					padding: 0;
+					width: calc(50% - var(--gap) / 2);
+					font-size: 0.875rem;
+				}
+			}
+		}
+
+		&__text {
+			&_slider {
+				width: 100%;
+			}
+		}
+	}
+
+	// FEEDBACK 
+	.feedback {
+
+		&__decor {
+			&_right {
+				right: 0;
+			}
+		}
+
+		&__content {
+			padding: 50px 80px;
+		}
+
+		&__form {
+
+			&_subtitle {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	// APARTS 
+
+	.aparts {
+
+		& .h2 {
+			margin-bottom: 40px;
+		}
+
+		&__list {
+			margin-top: 40px;
+		}
+
+		&__more {
+			margin-top: 45px;
 		}
 	}
 }

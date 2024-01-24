@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 	aboutSlider();
-	finishingsSlider();
+	finishingsSliders();
 	developerSliders();
 
 	$(document).on("click", ".head__burger_btn", function () {
@@ -181,6 +181,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	}
 
+	if (document.querySelector(".aparts__filter")) {
+		$(".aparts__filter_form").css({ "max-height": $(".aparts__filter_form").find(".filter__form_fields").innerHeight() + "px" });
+
+		$(window).resize(function () {
+			$(".aparts__filter_form").css({ "max-height": $(".aparts__filter_form").find(".filter__form_fields").innerHeight() + "px" });
+		})
+	}
+
 	$(document).on("click", ".aparts__filter_hidden", function () {
 
 		const form = $(".aparts__filter_form");
@@ -249,4 +257,34 @@ document.addEventListener("DOMContentLoaded", function () {
 		accordionItems[0].querySelector(".accordion-content").style.maxHeight = accordionItems[0].querySelector(".accordion-content").scrollHeight + "px";
 		// accordionItems[1].querySelector("svg use").setAttribute("href", "#accordion-close");
 	}
+
+	if (document.querySelector(".apart__sheme")) {
+		const shemeImages = document.querySelectorAll(".apart__sheme_img");
+		const tabs = document.querySelectorAll(".apart__sheme_tab");
+
+		shemeImages[0].classList.add("active");
+		tabs[0].classList.add("active")
+
+		$(document).on("click", ".apart__sheme_tab", function () {
+
+			$(".apart__sheme_tab").removeClass("active");
+			$(".apart__sheme_img").removeClass("active");
+
+			$(this).addClass("active");
+			$($(this).data("target")).addClass("active");
+
+			if ($(this).data("target") !== "#tab1") {
+				$(this).closest(".apart__sheme").addClass("w100");
+				$(".apart__desc").addClass("w0");
+			} else {
+				$(this).closest(".apart__sheme").removeClass("w100");
+				$(".apart__desc").removeClass("w0");
+			}
+		});
+	}
+
+	$(document).on("click", ".page__back_link", function () {
+
+		history.back();
+	})
 });

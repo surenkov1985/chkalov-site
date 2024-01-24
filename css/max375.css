@@ -6,4 +6,14 @@
   .mobile__content {
     padding: 15px 20px 20px;
   }
+  .feedback__content {
+    padding: 30px 20px;
+  }
+  .feedback__form_scls {
+    flex-wrap: wrap;
+  }
+  .feedback__form_scls-list {
+    width: 100%;
+    justify-content: space-between;
+  }
 }

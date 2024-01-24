@@ -42,6 +42,7 @@ $(document).ready(function () {
 	loadScript(window.location.protocol + "//api-maps.yandex.ru/2.1/?lang=ru_RU", initMap.bind(this));
 });
 function initMap() {
+	if (!document.querySelector("#main_map")) return;
 	ymaps.ready(function () {
 		// Карта
 		var myMap = new ymaps.Map('main_map', {
