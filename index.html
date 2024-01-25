@@ -1198,20 +1198,21 @@
 			<section id="calc" class="section section_white calc">
 				<div class="container">
 					<h2 class="h2">Рассчитайте свой платёж по ипотеке</h2>
-					<div class="calc__form">
+					<form class="calc__form" data-price="5000000" data-min-price="3000000" data-max-price="15000000"
+						data-min-pay="10" data-pay="50" data-term="20" data-min-term="10" data-max-term="30" data-percent="8">
 						<div class="calc__form_fields">
 							<div class="filter__form_field">
 								<span class="dropdown__title xs-font">Стоимость, ₽</span>
-								<div class="range-field place-range">
+								<div class="range-field calc-price-range">
 									<div class="range-field__values">
-										<div class="range-field__value-min"><input type="text" name="place-min"
-												class="polzunok-input-5-left" />
+										<div class="range-field__value-min"><input type="text" name="calc-price"
+												class="polzunok-input-5-left" style="width: auto;" />
 											<span class="value"></span>
 										</div>
-										<div class="range-field__value-max"><input type="text" name="place-max"
+										<!-- <div class="range-field__value-max"><input type="text" name="place-max"
 												class="polzunok-input-5-right " />
 											<span class="value"></span>
-										</div>
+										</div> -->
 									</div>
 									<div class="range-field__input">
 										<div class="range-field__line">
@@ -1223,15 +1224,16 @@
 							</div>
 							<div class="filter__form_field">
 								<span class="dropdown__title xs-font">Первоначальный взнос, ₽</span>
-								<div class="range-field place-range">
+								<div class="range-field first-pay-range">
 									<div class="range-field__values">
-										<div class="range-field__value-min"><input type="text" name="place-min"
-												class="polzunok-input-5-left" />
+										<div class="range-field__value-min"><input type="text" name="first-pay"
+												class="polzunok-input-5-left" style="width: auto;" />
 											<span class="value"></span>
 										</div>
-										<div class="range-field__value-max"><input type="text" name="place-max"
-												class="polzunok-input-5-right " />
-											<span class="value"></span>
+										<div class="range-field__value-max" style="font-weight: 600;color: #8a8fa4;"><input
+												type="text" name="place-max" class="polzunok-input-5-right "
+												style="font-weight: 600;color: #8a8fa4;" />
+											<span class="value">%</span>
 										</div>
 									</div>
 									<div class="range-field__input">
@@ -1244,16 +1246,16 @@
 							</div>
 							<div class="filter__form_field">
 								<span class="dropdown__title xs-font">Срок, лет</span>
-								<div class="range-field place-range">
+								<div class="range-field calc-term-range">
 									<div class="range-field__values">
-										<div class="range-field__value-min"><input type="text" name="place-min"
-												class="polzunok-input-5-left" />
+										<div class="range-field__value-min"><input type="text" name="calc-term"
+												class="polzunok-input-5-left" style="width: auto;" />
 											<span class="value"></span>
 										</div>
-										<div class="range-field__value-max"><input type="text" name="place-max"
+										<!-- <div class="range-field__value-max"><input type="text" name="place-max"
 												class="polzunok-input-5-right " />
 											<span class="value"></span>
-										</div>
+										</div> -->
 									</div>
 									<div class="range-field__input">
 										<div class="range-field__line">
@@ -1272,17 +1274,17 @@
 								</p>
 							</div>
 							<div class="calc__res_fields">
-								<div class="calc__res_field">
+								<div class="calc__res_field term">
 									<p class="light-text">Срок кредита</p>
-									<p class="value">20 лет</p>
+									<p class="value"><span>20</span> лет</p>
 								</div>
-								<div class="calc__res_field">
+								<div class="calc__res_field pay">
 									<p class="light-text">Ежемесячный платёж</p>
-									<p class="value">30 458 ₽ / мес.</p>
+									<p class="value"><span>30 458</span> ₽ / мес.</p>
 								</div>
-								<div class="calc__res_field">
+								<div class="calc__res_field overpay ">
 									<p class="light-text">Переплата</p>
-									<p class="value">5 245 854 ₽</p>
+									<p class="value"><span>5 245 854</span> ₽</p>
 								</div>
 							</div>
 						</div>
@@ -1293,7 +1295,7 @@
 						<div class="calc__resp">
 							<button class="btn btn-color" data-fancybox data-src="#modal_recall">Подать заявку</button>
 						</div>
-					</div>
+					</form>
 					<div class="calc__developer">
 						<div class="calc__developer_info">
 							<div class="calc__developer_link">

@@ -264,3 +264,164 @@ function initMap() {
 
 	});
 }
+
+function changeRangeSlider(slider, minVal = 1, maxVal, step = 1) {
+
+	if (!document.querySelector(slider)) return;
+
+	$(slider).find(".range-field__line").slider({
+		min: minVal,
+		max: maxVal,
+		values: [minVal, maxVal],
+		step: step,
+		range: true,
+		animate: "fast",
+		slide: function (event, ui) {
+			$(slider).find(".polzunok-input-5-left").val(ui.values[0]);
+			$(slider).find(".polzunok-input-5-right").val(ui.values[1]);
+		}
+	});
+
+	$(slider).find(".polzunok-input-5-left").val($(slider).find(".range-field__line").slider("values", 0));
+	$(slider).find(".polzunok-input-5-right").val($(slider).find(".range-field__line").slider("values", 1));
+	$(slider).find("input").change(function () {
+		let input_left = $(slider).find(".polzunok-input-5-left").val().replace(/[^0-9]/g, ''),
+			opt_left = $(slider).find(".range-field__line").slider("option", "min"),
+			where_right = $(slider).find(".range-field__line").slider("values", 1),
+			input_right = $(slider).find(".polzunok-input-5-right").val().replace(/[^0-9]/g, ''),
+			opt_right = $(slider).find(".range-field__line").slider("option", "max"),
+			where_left = $(slider).find(".range-field__line").slider("values", 0);
+		if (input_left > where_right) {
+			input_left = where_right;
+		}
+		if (input_left < opt_left) {
+			input_left = opt_left;
+		}
+		if (input_left == "") {
+			input_left = 0;
+		}
+		if (input_right < where_left) {
+			input_right = where_left;
+		}
+		if (input_right > opt_right) {
+			input_right = opt_right;
+		}
+		if (input_right == "") {
+			input_right = 0;
+		}
+		$(slider).find(".polzunok-input-5-left").val(input_left);
+		$(slider).find(".polzunok-input-5-right").val(input_right);
+		if (input_left != where_left) {
+			$(slider).find(".range-field__line").slider("values", 0, input_left);
+		}
+		if (input_right != where_right) {
+			$(slider).find(".range-field__line").slider("values", 1, input_right);
+		}
+	});
+}
+
+
+function calcRangeSliderMin(slider, val, minVal = 1, maxVal, step = 1, price = null, isListener = false) {
+
+	if (!document.querySelector(slider)) return;
+
+	$(slider).find(".range-field__line").slider({
+		min: minVal,
+		max: maxVal,
+		value: val,
+		step: step,
+		range: "min",
+		animate: "fast",
+		price: price,
+		slide: function (event, ui) {
+
+			if (price) {
+				// console.log(Math.round(ui.value * 100))
+				$(slider).find(".polzunok-input-5-right").val(Math.round(ui.value * 100));
+				$(slider).find(".polzunok-input-5-left").val(Math.round(+price * +ui.value));
+			} else {
+				$(slider).find(".polzunok-input-5-left").val(ui.value);
+			}
+			$(slider).find("input").change()
+		}
+	});
+
+	if (isListener) return;
+
+	if (price) {
+
+		$(slider).find(".polzunok-input-5-right").val(Math.round($(slider).find(".range-field__line").slider("value") * 100));
+		$(slider).find(".polzunok-input-5-left").val(Math.round($(slider).find(".range-field__line").slider("value") * parseFloat(price)));
+
+		$(slider).find("input").change(function (e) {
+			let input_left = $(slider).find(".polzunok-input-5-left").val().replace(/[^0-9]/g, ''),
+				opt_left = Math.round($(slider).find(".range-field__line").slider("value") * $(slider).find(".range-field__line").slider("option", "min")),
+				where_right = $(slider).find(".range-field__line").slider("value"),
+				input_right = $(slider).find(".polzunok-input-5-right").val().replace(/[^0-9]/g, '') / 100,
+				opt_right = $(slider).find(".range-field__line").slider("option", "max"),
+				where_left = $(slider).find(".range-field__line").slider("option", "min");
+
+			if ($(e.target).hasClass("polzunok-input-5-left")) {
+				if (+input_left > +price) {
+					input_left = price;
+				}
+				if (+input_left < +opt_left) {
+					input_left = opt_left;
+				}
+				if (input_left == "") {
+					input_left = 0;
+				}
+				let percent = Math.ceil(input_left / price * 100 * 100) / 100;
+
+				$(slider).find(".polzunok-input-5-right").val(percent);
+				$(slider).find(".polzunok-input-5-left").val(input_left);
+
+				console.log(55)
+
+			} else {
+				console.log(66)
+
+				if (input_right < where_left) {
+					input_right = where_left;
+				}
+				if (input_right > opt_right) {
+					input_right = opt_right;
+				}
+				if (input_right == "") {
+					input_right = 0;
+				}
+				$(slider).find(".polzunok-input-5-left").val(Math.round(price * input_right));
+				$(slider).find(".polzunok-input-5-right").val(Math.round(input_right * 100));
+
+				if (input_right != +where_right) {
+					$(slider).find(".range-field__line").slider("value", input_right);
+				}
+			}
+		});
+	} else {
+		$(slider).find(".polzunok-input-5-left").val($(slider).find(".range-field__line").slider("value"));
+		$(slider).find("input").change(function () {
+			let input_left = $(slider).find(".polzunok-input-5-left").val().replace(/[^0-9]/g, ''),
+				opt_left = $(slider).find(".range-field__line").slider("option", "min"),
+				where_right = $(slider).find(".range-field__line").slider("value"),
+				opt_right = $(slider).find(".range-field__line").slider("option", "max")
+			where_left = $(slider).find(".range-field__line").slider("value");
+			if (input_left > opt_right) {
+				input_left = opt_right;
+			}
+			if (input_left < opt_left) {
+				input_left = opt_left;
+			}
+			if (input_left == "") {
+				input_left = 0;
+			}
+
+			$(slider).find(".polzunok-input-5-left").val(input_left);
+
+			if (input_left != where_left) {
+				$(slider).find(".range-field__line").slider("value", input_left);
+			}
+		});
+	}
+	isListener = true;
+}

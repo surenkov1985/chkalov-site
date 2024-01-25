@@ -67,6 +67,9 @@
   .fs__decor_left-foll {
     display: none;
   }
+  .fs__advs_list {
+    gap: 30px;
+  }
   .apart__desc_container {
     padding: 20px 15px;
   }

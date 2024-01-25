@@ -124,63 +124,91 @@ document.addEventListener("DOMContentLoaded", function () {
 	changeRangeSlider(".place-range", 49, 150, 1);
 	changeRangeSlider(".price-range", 33.7, 100.2, 0.1);
 
-	function changeRangeSlider(slider, minVal = 1, maxVal, step = 1) {
-
-		if (!document.querySelector(slider)) return;
-
-		$(slider).find(".range-field__line").slider({
-			min: minVal,
-			max: maxVal,
-			values: [minVal, maxVal],
-			step: step,
-			range: true,
-			animate: "fast",
-			slide: function (event, ui) {
-				$(slider).find(".polzunok-input-5-left").val(ui.values[0]);
-				$(slider).find(".polzunok-input-5-right").val(ui.values[1]);
-			}
-		});
-
-		$(slider).find(".polzunok-input-5-left").val($(slider).find(".range-field__line").slider("values", 0));
-		$(slider).find(".polzunok-input-5-right").val($(slider).find(".range-field__line").slider("values", 1));
-		$(slider).find("input").change(function () {
-			let input_left = $(slider).find(".polzunok-input-5-left").val().replace(/[^0-9]/g, ''),
-				opt_left = $(slider).find(".range-field__line").slider("option", "min"),
-				where_right = $(slider).find(".range-field__line").slider("values", 1),
-				input_right = $(slider).find(".polzunok-input-5-right").val().replace(/[^0-9]/g, ''),
-				opt_right = $(slider).find(".range-field__line").slider("option", "max"),
-				where_left = $(slider).find(".range-field__line").slider("values", 0);
-			if (input_left > where_right) {
-				input_left = where_right;
-			}
-			if (input_left < opt_left) {
-				input_left = opt_left;
-			}
-			if (input_left == "") {
-				input_left = 0;
-			}
-			if (input_right < where_left) {
-				input_right = where_left;
-			}
-			if (input_right > opt_right) {
-				input_right = opt_right;
-			}
-			if (input_right == "") {
-				input_right = 0;
-			}
-			$(slider).find(".polzunok-input-5-left").val(input_left);
-			$(slider).find(".polzunok-input-5-right").val(input_right);
-			if (input_left != where_left) {
-				$(slider).find(".range-field__line").slider("values", 0, input_left);
-			}
-			if (input_right != where_right) {
-				$(slider).find(".range-field__line").slider("values", 1, input_right);
-			}
-		});
 
 
+	if (document.querySelector(".calc__form")) {
+
+		const form = document.querySelector(".calc__form");
+
+		let price = parseFloat(form.dataset.price),
+			minPrice = parseFloat(form.dataset.minPrice),
+			maxPrice = parseFloat(form.dataset.maxPrice),
+			pay = parseFloat(form.dataset.pay / 100),
+			minPay = parseFloat(form.dataset.minPay / 100),
+			minTerm = parseFloat(form.dataset.minTerm),
+			maxTerm = parseFloat(form.dataset.maxTerm),
+			term = parseFloat(form.dataset.term),
+			percent = parseFloat(form.dataset.percent);
+
+		calcRangeSliderMin(".calc-price-range", price, minPrice, maxPrice, 1);
+		calcRangeSliderMin(".first-pay-range", pay, minPay, 1, 0.01, price);
+		calcRangeSliderMin(".calc-term-range", term, minTerm, maxTerm, 1);
+
+		setCalcResult();
 	}
 
+	function setCalcResult() {
+		const calcResult = $(".calc__res");
+		const calcPrice = $(calcResult).find(".price");
+		const calcTerm = $(calcResult).find(".term .value span");
+		const calcPay = $(calcResult).find(".pay .value span");
+		const calcOverPay = $(calcResult).find(".overpay .value span");
+		const percent = 0.08;
+		const form = $(".calc__form");
+		const price = $(form).find("input[name=calc-price]").val();
+		const term = $(form).find("input[name=calc-term]").val();
+		const firstpray = $(form).find("input[name=first-pay]").val();
+
+		$(calcPrice).html(new Intl.NumberFormat("ru").format(price));
+		$(calcTerm).text(term);
+
+		const [pay, overpay] = ipoteka(price, firstpray, percent, term);
+
+		$(calcPay).text(new Intl.NumberFormat("ru").format(pay))
+		$(calcOverPay).text(new Intl.NumberFormat("ru").format(overpay))
+	}
+
+	$(document).on("change", "input[name=calc-price]", function () {
+
+	})
+
+	$(document).on("change", ".calc__form", function (e) {
+
+		if (e.target.name === "calc-price") {
+			const form = document.querySelector(".calc__form");
+
+			let price = parseInt($(form).find("input[name=calc-price]").val()),
+				minPrice = parseFloat(form.dataset.minPrice),
+				maxPrice = parseFloat(form.dataset.maxPrice),
+				pay = parseFloat($(form).find("input[name=place-max]").val() / 100),
+				minPay = parseFloat(form.dataset.minPay / 100),
+				minTerm = parseFloat(form.dataset.minTerm),
+				maxTerm = parseFloat(form.dataset.maxTerm),
+				term = parseFloat(form.dataset.term),
+				percent = parseFloat(form.dataset.percent);
+
+			// $(".first-pay-range").find(".range-field__line").slider("disable");
+			// $(".first-pay-range").find(".range-field__line").slider("option", { price: price });
+			// $(".first-pay-range").find(".range-field__line").slider("instance");
+			console.log($(".first-pay-range").find(".range-field__line").data().uiSlider.options);
+			$(".first-pay-range").find(".range-field__line").slider("destroy");
+			calcRangeSliderMin(".first-pay-range", pay, minPay, 1, 0.01, price, true);
+		}
+
+		// console.log($(".first-pay-range").find(".range-field__line").slider("option", "min"))
+		setCalcResult();
+
+	})
+
+	function ipoteka(price, pay, percent, years) {
+		let i = parseFloat(percent / 1200);
+		let n = parseFloat(+years * 12);
+		let res = Math.round((+price - +pay) * (i / (Math.pow(1 + i, n) - 1)));
+		let sum = res * n;
+		return [res, sum];
+	}
+
+	console.log($(".term .value span").text())
 	if (document.querySelector(".aparts__filter")) {
 		$(".aparts__filter_form").css({ "max-height": $(".aparts__filter_form").find(".filter__form_fields").innerHeight() + "px" });
 
