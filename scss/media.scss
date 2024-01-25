@@ -386,4 +386,17 @@
 			}
 		}
 	}
+
+	// CALC
+
+	.calc {
+
+		&__res {
+			padding: 25px 45px;
+
+			&_field {
+				padding: 0 20px;
+			}
+		}
+	}
 }

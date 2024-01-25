@@ -57,11 +57,42 @@
     right: 10%;
     top: 20%;
   }
+  .page__control {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .page__control_links {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+  .apart__desc_container {
+    padding: 35px 30px;
+    gap: 30px;
+  }
+  .apart__desc_list {
+    margin-top: 20px;
+    gap: var(--gap);
+  }
+  .apart__desc_item {
+    font-size: 0.875rem;
+  }
   .about__decor_right {
     top: 0px;
   }
   .about__decor_left {
     bottom: 0;
+  }
+  .about__apart {
+    gap: 40px;
+  }
+  .about__apart_sheme {
+    padding: 30px 50px;
+  }
+  .about__apart_desc {
+    min-width: 350px;
   }
   .about__desc {
     margin-top: 20px;
@@ -165,5 +196,78 @@
   }
   .aparts__more {
     margin-top: 45px;
+  }
+  .calc .h2 {
+    margin-bottom: 40px;
+  }
+  .calc__form {
+    margin-bottom: 50px;
+    padding: 40px 80px;
+  }
+  .calc__res {
+    padding: 20px 30px;
+    flex-direction: column;
+  }
+  .calc__res_fields {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--gap);
+  }
+  .calc__res_field {
+    flex-grow: 1;
+    flex: 1 1 190px;
+    padding: 0 0 0 20px;
+  }
+  .calc__developer {
+    gap: 50px;
+  }
+  .calc__developer_info {
+    padding-top: 30px;
+  }
+  .calc__developer_quote {
+    padding: 15px 30px;
+  }
+  .calc__developer_rating {
+    gap: 15px;
+  }
+  .calc__developer_rating .icon {
+    width: 70px;
+  }
+  .developer .h2 {
+    margin-bottom: 40px;
+  }
+  .developer__sliders {
+    gap: 50px;
+  }
+  .developer__slider_text {
+    width: 38.3333333333%;
+  }
+  .developer__text-slide {
+    padding-top: 30px;
+  }
+  .faq .h2 {
+    margin-bottom: 40px;
+  }
+  .faq__item {
+    padding: 25px 60px;
+  }
+  .faq__item_body {
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+  .faq__item_body p {
+    width: 70%;
+  }
+}
+@media (max-width: 850px) {
+  .about__apart {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .about__apart_desc {
+    width: 100%;
+  }
+  .about__apart_desc.w0 {
+    width: 100%;
   }
 }

@@ -86,6 +86,7 @@
 
 			&_right {
 				right: 0%;
+				display: none;
 
 				&-foll {
 					display: none;
@@ -102,7 +103,29 @@
 		}
 	}
 
+
+
+	.apart {
+		&__desc {
+			&_container {
+				padding: 20px 15px;
+			}
+		}
+	}
+
 	.about {
+
+		&__apart {
+
+			&_sheme {
+				padding: 20px 15px;
+				gap: 30px;
+			}
+
+			&_desc {
+				min-width: auto;
+			}
+		}
 
 		&__decor {
 
@@ -316,4 +339,138 @@
 			padding: 20px 20px 30px;
 		}
 	}
+
+	// CALC
+
+	.calc {
+
+		& .h2 {
+			margin-bottom: 25px;
+		}
+
+		&__form {
+			margin-bottom: 30px;
+			padding: 20px 30px;
+
+			&_fields {
+				gap: calc(var(--gap) * 2);
+			}
+		}
+
+		&__resp {
+			margin-top: 25px;
+		}
+
+		&__developer {
+			gap: 30px;
+
+			&_link {
+				width: 100%;
+			}
+
+			&_info {
+				padding-top: 0px;
+				width: 100%;
+			}
+
+			&_img {
+				width: 100%;
+			}
+
+			&_quote {
+				padding: 15px;
+			}
+
+			&_rating {
+				gap: 15px;
+				align-items: flex-start;
+
+				& .icon {
+					width: 60px;
+					margin-top: 5px;
+				}
+
+				& .h3 {
+					margin-bottom: 4px;
+				}
+
+				& p {
+					font-size: 0.875rem;
+				}
+			}
+		}
+	}
+
+	// DEVELOPER
+
+	.developer {
+
+		& .h2 {
+			margin-bottom: 25px;
+		}
+
+		&__sliders {
+			gap: 20px;
+		}
+
+		&__text {
+
+			& .h3 {
+				margin-bottom: 8px;
+			}
+		}
+	}
+
+	// FAQ
+
+	.faq {
+
+		& .h2 {
+			margin-bottom: 25px;
+		}
+
+		&__item {
+			padding: 15px 20px;
+
+			&_title {
+				align-items: flex-start;
+
+				& .icon {
+					width: 25px;
+				}
+			}
+
+			&_body {
+				margin-top: 16px;
+				padding-top: 16px;
+
+				& p {
+					width: 95%;
+				}
+			}
+		}
+	}
+
+	.present {
+		&__decor {
+
+			&_left,
+			&_right {
+				display: none;
+			}
+
+			&_left {
+				top: 0;
+				left: 0;
+				width: 33%;
+			}
+
+			&_right {
+				top: 0;
+				right: 0;
+				width: 48%;
+			}
+		}
+	}
+
 }

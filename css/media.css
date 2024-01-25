@@ -276,4 +276,10 @@
   .about__decor_left {
     bottom: 50px;
   }
+  .calc__res {
+    padding: 25px 45px;
+  }
+  .calc__res_field {
+    padding: 0 20px;
+  }
 }

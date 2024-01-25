@@ -16,4 +16,14 @@
     width: 100%;
     justify-content: space-between;
   }
+  .calc .h2 {
+    margin-bottom: 25px;
+  }
+  .calc__form {
+    margin-bottom: 30px;
+    padding: 20px 15px;
+  }
+  .calc__resp {
+    margin-top: 25px;
+  }
 }

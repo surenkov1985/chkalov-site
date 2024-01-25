@@ -106,11 +106,21 @@
     left: 40%;
     top: 26%;
   }
+  .apart__desc_container {
+    padding: 50px 45px;
+    gap: 40px;
+  }
   .about__decor_right {
     top: 20px;
   }
   .about__decor_left {
     bottom: 20px;
+  }
+  .about__apart {
+    gap: 50px;
+  }
+  .about__apart_sheme {
+    padding: 40px 80px;
   }
   .about__slider {
     height: 400px;
@@ -171,5 +181,63 @@
   }
   .aparts__more {
     margin-top: 55px;
+  }
+  .calc .h2 {
+    margin-bottom: 50px;
+  }
+  .calc .h2 {
+    margin-bottom: 50px;
+  }
+  .calc__form {
+    margin-bottom: 60px;
+    padding: 45px 100px;
+  }
+  .calc__res {
+    padding: 20px 40px;
+    flex-direction: column;
+  }
+  .calc__res_field {
+    flex-grow: 1;
+  }
+  .calc__developer {
+    gap: 80px;
+  }
+  .calc__developer_info {
+    padding-top: 40px;
+  }
+  .calc__developer_rating {
+    gap: 20px;
+  }
+  .calc__developer_rating .icon {
+    width: 85px;
+  }
+  .calc__developer_quote {
+    padding: 20px 50px;
+    max-width: 450px;
+  }
+  .developer .h2 {
+    margin-bottom: 50px;
+  }
+  .developer__sliders {
+    gap: 60px;
+  }
+  .developer__text-slide {
+    padding-top: 40px;
+  }
+  .faq .h2 {
+    margin-bottom: 50px;
+  }
+  .faq__list {
+    gap: var(--gap);
+  }
+  .faq__item {
+    padding: 35px 80px;
+  }
+  .faq__item_body {
+    margin-top: 22px;
+    padding-top: 22px;
+  }
+  .faq__item_body p {
+    width: 65%;
   }
 }
