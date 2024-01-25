@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
 	aboutSlider();
 	finishingsSliders();
 	developerSliders();
@@ -9,15 +8,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 	$(document).on("click", ".mobile__close_btn", function () {
-
 		closeModal();
 	});
 
 	$(document).on("click", ".mobile", function (e) {
-
 		if (!e.target.closest(".mobile__content")) {
 			closeModal();
-		};
+		}
 	});
 
 	$(document).on("click", ".mobile__nav_link", function (e) {
@@ -32,11 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		const dropdown = $(this).closest(".dropdown");
 
 		$(".dropdown").each((ind, drop) => {
-			console.log($(this).closest($(drop)))
+			console.log($(this).closest($(drop)));
 			if (!$(this).closest($(drop)).length) {
-				$(drop).removeClass("active")
+				$(drop).removeClass("active");
 			}
-		})
+		});
 
 		$(dropdown).toggleClass("active");
 	});
@@ -50,7 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 	$(document).on("click", function (e) {
-
 		if (!e.target.closest(".dropdown")) {
 			$(".dropdown").removeClass("active");
 		}
@@ -59,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	$(document).on("change", "input[name=discount]", function () {
 		const input = $(this).closest(".slide-field__input");
 
-		console.log($("input[name=discount]:checked").val())
+		console.log($("input[name=discount]:checked").val());
 
 		if ($("input[name=discount]:checked").val()) {
 			$(input).addClass("active");
@@ -70,13 +66,11 @@ document.addEventListener("DOMContentLoaded", function () {
 	let startPos;
 
 	$(document).on("mousedown pointerdown", function (e) {
-
 		// let mousePositionX = e.
 
 		mousedown = true;
 
 		if (e.target.classList.contains("before")) {
-
 			const range = $(e.target).closest(".range-field");
 			const rangeInput = $(range).find(".range-field__input");
 			const rangeLine = $(range).find(".range-field__line");
@@ -90,44 +84,43 @@ document.addEventListener("DOMContentLoaded", function () {
 			startPos = e.screenX;
 
 			let vector;
-			let move
+			let move;
 
 			$(document).on("mousemove pointermove", function (ev) {
 				if (mousedown) {
-
 					if (mouseX < ev.screenX) {
 						vector = "right";
-						$(rangeLine).css({ "width": $(rangeLine).width() + (startPos - ev.screenX) + "px", "left": $(rangeInput).innerWidth() - $(rangeLine).innerWidth() + "px" })
+						$(rangeLine).css({
+							width: $(rangeLine).width() + (startPos - ev.screenX) + "px",
+							left: $(rangeInput).innerWidth() - $(rangeLine).innerWidth() + "px",
+						});
 						move = startPos - ev.screenX;
 					} else if (mouseX > ev.screenX) {
 						vector = "left";
-						$(rangeLine).css({ "width": $(rangeLine).innerWidth() - (startPos - ev.screenX) + "px", "left": $(rangeInput).innerWidth() - $(rangeLine).innerWidth() + "px" });
+						$(rangeLine).css({
+							width: $(rangeLine).innerWidth() - (startPos - ev.screenX) + "px",
+							left: $(rangeInput).innerWidth() - $(rangeLine).innerWidth() + "px",
+						});
 						move = startPos - ev.screenX;
 					}
-					console.log(vector, move)
+					console.log(vector, move);
 					mouseX = ev.screenX;
 				}
-			})
+			});
 
-
-			console.log(rangeStep, $(rangeLine).innerWidth())
+			console.log(rangeStep, $(rangeLine).innerWidth());
 		}
-
-	})
+	});
 
 	$(document).on("mouseup pointerup", function (e) {
-
 		mousedown = false;
-	})
+	});
 
 	changeRangeSlider(".fill-range", 1, 32, 0.1);
 	changeRangeSlider(".place-range", 49, 150, 1);
 	changeRangeSlider(".price-range", 33.7, 100.2, 0.1);
 
-
-
 	if (document.querySelector(".calc__form")) {
-
 		const form = document.querySelector(".calc__form");
 
 		let price = parseFloat(form.dataset.price),
@@ -164,16 +157,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		const [pay, overpay] = ipoteka(price, firstpray, percent, term);
 
-		$(calcPay).text(new Intl.NumberFormat("ru").format(pay))
-		$(calcOverPay).text(new Intl.NumberFormat("ru").format(overpay))
+		$(calcPay).text(new Intl.NumberFormat("ru").format(pay));
+		$(calcOverPay).text(new Intl.NumberFormat("ru").format(overpay));
 	}
 
-	$(document).on("change", "input[name=calc-price]", function () {
-
-	})
+	$(document).on("change", "input[name=calc-price]", function () {});
 
 	$(document).on("change", ".calc__form", function (e) {
-
 		if (e.target.name === "calc-price") {
 			const form = document.querySelector(".calc__form");
 
@@ -197,8 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		// console.log($(".first-pay-range").find(".range-field__line").slider("option", "min"))
 		setCalcResult();
-
-	})
+	});
 
 	function ipoteka(price, pay, percent, years) {
 		let i = parseFloat(percent / 1200);
@@ -208,17 +197,16 @@ document.addEventListener("DOMContentLoaded", function () {
 		return [res, sum];
 	}
 
-	console.log($(".term .value span").text())
+	console.log($(".term .value span").text());
 	if (document.querySelector(".aparts__filter")) {
 		$(".aparts__filter_form").css({ "max-height": $(".aparts__filter_form").find(".filter__form_fields").innerHeight() + "px" });
 
 		$(window).resize(function () {
 			$(".aparts__filter_form").css({ "max-height": $(".aparts__filter_form").find(".filter__form_fields").innerHeight() + "px" });
-		})
+		});
 	}
 
 	$(document).on("click", ".aparts__filter_hidden", function () {
-
 		const form = $(".aparts__filter_form");
 
 		if ($(form).hasClass("hidden")) {
@@ -236,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		const form = $(".aparts__filter_form");
 		const drops = $(form).find(".dropdown");
 
-		$(form).trigger('reset');
+		$(form).trigger("reset");
 
 		$(".price-range .polzunok-input-5-left").val($(".price-range .range-field__line").slider("option", "min")).change();
 		$(".price-range .polzunok-input-5-right").val($(".price-range .range-field__line").slider("option", "max")).change();
@@ -282,7 +270,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	if (accordionItems && accordionItems[1]) {
 		accordionItems[0].classList.add("active");
-		accordionItems[0].querySelector(".accordion-content").style.maxHeight = accordionItems[0].querySelector(".accordion-content").scrollHeight + "px";
+		accordionItems[0].querySelector(".accordion-content").style.maxHeight =
+			accordionItems[0].querySelector(".accordion-content").scrollHeight + "px";
 		// accordionItems[1].querySelector("svg use").setAttribute("href", "#accordion-close");
 	}
 
@@ -291,10 +280,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		const tabs = document.querySelectorAll(".apart__sheme_tab");
 
 		shemeImages[0].classList.add("active");
-		tabs[0].classList.add("active")
+		tabs[0].classList.add("active");
 
 		$(document).on("click", ".apart__sheme_tab", function () {
-
 			$(".apart__sheme_tab").removeClass("active");
 			$(".apart__sheme_img").removeClass("active");
 
@@ -312,7 +300,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	$(document).on("click", ".page__back_link", function () {
-
 		history.back();
-	})
+	});
 });

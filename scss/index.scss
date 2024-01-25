@@ -1343,6 +1343,13 @@
 
 	}
 
+	&__value {
+		&-max {
+			display: flex;
+
+		}
+	}
+
 	&__input {
 		position: absolute;
 		display: flex;
