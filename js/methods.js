@@ -333,7 +333,7 @@ function changeRangeSlider(slider, minVal = 1, maxVal, step = 1) {
 	$(slider).find(".polzunok-input-5-right").val($(slider).find(".range-field__line").slider("values", 1));
 	$(slider)
 		.find("input")
-		.change(function () {
+		.on("focusout", function () {
 			let input_left = $(slider)
 				.find(".polzunok-input-5-left")
 				.val()
@@ -477,7 +477,7 @@ function calcRangeSliderMin(slider, val, minVal = 1, maxVal, step = 1, price = n
 		$(slider).find(".polzunok-input-5-left").val($(slider).find(".range-field__line").slider("value"));
 		$(slider)
 			.find("input")
-			.change(function () {
+			.on("focusout", function () {
 				let input_left = $(slider)
 					.find(".polzunok-input-5-left")
 					.val()

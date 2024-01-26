@@ -272,12 +272,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		$(form).trigger("reset");
 
-		$(".price-range .polzunok-input-5-left").val($(".price-range .range-field__line").slider("option", "min")).change();
-		$(".price-range .polzunok-input-5-right").val($(".price-range .range-field__line").slider("option", "max")).change();
-		$(".place-range .polzunok-input-5-left").val($(".place-range .range-field__line").slider("option", "min")).change();
-		$(".place-range .polzunok-input-5-right").val($(".place-range .range-field__line").slider("option", "max")).change();
-		$(".fill-range .polzunok-input-5-left").val($(".fill-range .range-field__line").slider("option", "min")).change();
-		$(".fill-range .polzunok-input-5-right").val($(".fill-range .range-field__line").slider("option", "max")).change();
+
+		// $(".price-range .polzunok-input-5-left").val($(".price-range .range-field__line").slider("option", "min")).change();
+		// $(".price-range .polzunok-input-5-right").val($(".price-range .range-field__line").slider("option", "max")).change();
+		// $(".place-range .polzunok-input-5-left").val($(".place-range .range-field__line").slider("option", "min")).change();
+		// $(".place-range .polzunok-input-5-right").val($(".place-range .range-field__line").slider("option", "max")).change();
+		// $(".fill-range .polzunok-input-5-left").val($(".fill-range .range-field__line").slider("option", "min")).change();
+		// $(".fill-range .polzunok-input-5-right").val($(".fill-range .range-field__line").slider("option", "max")).change();
+
+		$(".price-range").find(".range-field__line").slider("destroy");
+		$(".place-range").find(".range-field__line").slider("destroy");
+		$(".fill-range").find(".range-field__line").slider("destroy");
+
+		changeRangeSlider(".fill-range", 1, 32, 0.1);
+		changeRangeSlider(".place-range", 49, 150, 1);
+		changeRangeSlider(".price-range", 33.7, 100.2, 0.1);
 
 		$(drops).each(function (_, dropdown) {
 			const dropdownItem = $(dropdown).find(".dropdown__item")[0];
