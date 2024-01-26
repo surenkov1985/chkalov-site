@@ -864,19 +864,19 @@
   transition: all var(--transition-duration);
 }
 .aparts__filter_hidden .show-filter {
-  display: inline;
+  display: none;
 }
 .aparts__filter_hidden .hidden-filter {
-  display: none;
+  display: inline;
 }
 .aparts__filter_hidden.active svg {
   transform: rotate(180deg);
 }
 .aparts__filter_hidden.active .show-filter {
-  display: none;
+  display: inline;
 }
 .aparts__filter_hidden.active .hidden-filter {
-  display: inline;
+  display: none;
 }
 .aparts__list {
   margin-top: 60px;

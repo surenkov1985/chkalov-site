@@ -1160,11 +1160,11 @@
 			}
 
 			& .show-filter {
-				display: inline;
+				display: none;
 			}
 
 			& .hidden-filter {
-				display: none;
+				display: inline;
 			}
 
 			&.active {
@@ -1173,11 +1173,11 @@
 				}
 
 				& .show-filter {
-					display: none;
+					display: inline;
 				}
 
 				& .hidden-filter {
-					display: inline;
+					display: none;
 				}
 
 			}

@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			$(filter).find(".aparts__filter_form").css({ "max-height": $(filter).find(".filter__form_fields").innerHeight() + "px" });
 			// $(form).css({ "max-height": $(form).find(".filter__form_fields").innerHeight() + "px" });
 			$(filterControl).css({ "display": "none" });
-			$(".aparts__filter_hidden").removeClass("active");
+			// $(".aparts__filter_hidden").removeClass("active");
 		}
 
 		$(window).resize(function () {
@@ -251,19 +251,45 @@ document.addEventListener("DOMContentLoaded", function () {
 		$("body").removeClass("hidden")
 	});
 
-	$(document).on("click", ".aparts__filter_hidden", function () {
+	$(document).on("click", ".aparts__filter_hidden", function (e) {
 
 		const form = $(".aparts__filter_form");
+		const filter = $(".aparts__filter").not(".aparts__filter_mobile");
+		const filterMobile = $(".aparts__filter_mobile");
+		const filterControl = $(".aparts__filter_control");
 
-		if ($(form).hasClass("hidden")) {
-			$(form).removeClass("hidden");
-			$(form).css({ "max-height": $(form).find(".filter__form_fields").innerHeight() + "px" });
-			$(this).removeClass("active");
+
+		if (!e.target.closest(".aparts__filter_mobile")) {
+			if ($(filter).find(".aparts__filter_form").hasClass("hidden")) {
+				$(filter).find(".aparts__filter_form").removeClass("hidden");
+				$(filter).find(".aparts__filter_form").css({ "max-height": $(filter).find(".filter__form_fields").innerHeight() + "px" });
+				$(this).removeClass("active");
+			} else {
+				$(filter).find(".aparts__filter_form").addClass("hidden");
+				$(filter).find(".aparts__filter_form").css({ "max-height": "0px" });
+				$(this).addClass("active");
+			}
 		} else {
-			$(form).addClass("hidden");
-			$(form).css({ "max-height": "0px" });
-			$(this).addClass("active");
+			if ($(filterMobile).find(".aparts__filter_form").hasClass("hidden")) {
+				$(filterMobile).find(".aparts__filter_form").removeClass("hidden");
+				$(filterMobile).find(".aparts__filter_form").css({ "max-height": "100%" });
+				$(this).removeClass("active");
+			} else {
+				$(filterMobile).find(".aparts__filter_form").addClass("hidden");
+				$(filterMobile).find(".aparts__filter_form").css({ "max-height": "0" });
+				$(this).addClass("active");
+			}
 		}
+
+		// if ($(form).hasClass("hidden")) {
+		// 	$(form).removeClass("hidden");
+		// 	$(form).css({ "max-height": $(form).find(".filter__form_fields").innerHeight() + "px" });
+		// 	$(this).removeClass("active");
+		// } else {
+		// 	$(form).addClass("hidden");
+		// 	$(form).css({ "max-height": "0px" });
+		// 	$(this).addClass("active");
+		// }
 	});
 
 	$(document).on("click", ".aparts__filter_reset", function () {
