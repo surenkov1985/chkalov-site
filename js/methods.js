@@ -81,7 +81,7 @@ function initMap() {
 				[56.246695, 43.828487],
 				{
 					hintContent: "",
-					balloonContent: "ЖК Уютный",
+					balloonContent: "ЖК Чкалов",
 				},
 				{
 					// iconLayout: 'default#imageWithContent',
@@ -93,10 +93,10 @@ function initMap() {
 
 			// Спорт
 			new ymaps.Placemark(
-				[59.618969, 30.395319],
+				[56.24839037026667, 43.85144765257722],
 				{
 					hintContent: "",
-					balloonContent: "Sport",
+					balloonContent: 'Дом физкультуры с бассейном, ОАО "ГАЗ"',
 				},
 				{
 					iconLayout: "default#imageWithContent",
@@ -109,10 +109,10 @@ function initMap() {
 
 			// Продукты
 			new ymaps.Placemark(
-				[59.61818, 30.387655],
+				[56.244140, 43.832854],
 				{
 					hintContent: "",
-					balloonContent: "Магазины",
+					balloonContent: "Рыба",
 				},
 				{
 					iconLayout: "default#imageWithContent",
@@ -122,10 +122,10 @@ function initMap() {
 				}
 			),
 			new ymaps.Placemark(
-				[59.616208, 30.37593],
+				[56.2424755990248, 43.847350850415914],
 				{
 					hintContent: "",
-					balloonContent: "Мини Лента",
+					balloonContent: "Перекресток",
 				},
 				{
 					iconLayout: "default#imageWithContent",
@@ -135,7 +135,7 @@ function initMap() {
 				}
 			),
 			new ymaps.Placemark(
-				[59.620055, 30.386415],
+				[56.24652148331625, 43.8241501469595],
 				{
 					hintContent: "",
 					balloonContent: "Красное&Белое",
@@ -148,10 +148,10 @@ function initMap() {
 				}
 			),
 			new ymaps.Placemark(
-				[59.619588, 30.392435],
+				[56.24808923719568, 43.82519084405034],
 				{
 					hintContent: "",
-					balloonContent: 'Супермаркет "Магнит"',
+					balloonContent: 'Продукты"',
 				},
 				{
 					iconLayout: "default#imageWithContent",
@@ -161,10 +161,10 @@ function initMap() {
 				}
 			),
 			new ymaps.Placemark(
-				[59.620013, 30.390195],
+				[56.247809072962234, 43.83111316140888],
 				{
 					hintContent: "",
-					balloonContent: "Семишагофф",
+					balloonContent: 'Продукты"',
 				},
 				{
 					iconLayout: "default#imageWithContent",
@@ -174,7 +174,20 @@ function initMap() {
 				}
 			),
 			new ymaps.Placemark(
-				[59.616822, 30.374272],
+				[56.24333136123018, 43.848443296702314],
+				{
+					hintContent: "",
+					balloonContent: "Пряжа",
+				},
+				{
+					iconLayout: "default#imageWithContent",
+					iconImageHref: "/images/icons/sales.svg",
+					iconImageSize: [40, 40],
+					iconImageOffset: [-20, -20],
+				}
+			),
+			new ymaps.Placemark(
+				[56.24608035468262, 43.82453638504809],
 				{
 					hintContent: "",
 					balloonContent: 'Супермаркет "Пятёрочка"',
@@ -188,52 +201,52 @@ function initMap() {
 			),
 
 			// ТЦ
-			new ymaps.Placemark(
-				[59.616375, 30.387379],
-				{
-					hintContent: "",
-					balloonContent: 'Торговый центр "Западный"',
-				},
-				{
-					iconLayout: "default#imageWithContent",
-					iconImageHref: "/images/icons/sales.svg",
-					iconImageSize: [40, 40],
-					iconImageOffset: [-20, -20],
-				}
-			),
-			new ymaps.Placemark(
-				[59.621759, 30.388369],
-				{
-					hintContent: "",
-					balloonContent: 'Торговый центр "Элиен"',
-				},
-				{
-					iconLayout: "default#imageWithContent",
-					iconImageHref: "/images/icons/sales.svg",
-					iconImageSize: [40, 40],
-					iconImageOffset: [-20, -20],
-				}
-			),
-			new ymaps.Placemark(
-				[59.622317, 30.39457],
-				{
-					hintContent: "",
-					balloonContent: "",
-				},
-				{
-					iconLayout: "default#imageWithContent",
-					iconImageHref: "/images/icons/sales.svg",
-					iconImageSize: [40, 40],
-					iconImageOffset: [-20, -20],
-				}
-			),
+			// new ymaps.Placemark(
+			// 	[59.616375, 30.387379],
+			// 	{
+			// 		hintContent: "",
+			// 		balloonContent: 'Торговый центр "Западный"',
+			// 	},
+			// 	{
+			// 		iconLayout: "default#imageWithContent",
+			// 		iconImageHref: "/images/icons/sales.svg",
+			// 		iconImageSize: [40, 40],
+			// 		iconImageOffset: [-20, -20],
+			// 	}
+			// ),
+			// new ymaps.Placemark(
+			// 	[59.621759, 30.388369],
+			// 	{
+			// 		hintContent: "",
+			// 		balloonContent: 'Торговый центр "Элиен"',
+			// 	},
+			// 	{
+			// 		iconLayout: "default#imageWithContent",
+			// 		iconImageHref: "/images/icons/sales.svg",
+			// 		iconImageSize: [40, 40],
+			// 		iconImageOffset: [-20, -20],
+			// 	}
+			// ),
+			// new ymaps.Placemark(
+			// 	[59.622317, 30.39457],
+			// 	{
+			// 		hintContent: "",
+			// 		balloonContent: "",
+			// 	},
+			// 	{
+			// 		iconLayout: "default#imageWithContent",
+			// 		iconImageHref: "/images/icons/sales.svg",
+			// 		iconImageSize: [40, 40],
+			// 		iconImageOffset: [-20, -20],
+			// 	}
+			// ),
 
 			// Школа
 			new ymaps.Placemark(
-				[59.620275, 30.38181],
+				[56.24620146462475, 43.83145731709626],
 				{
 					hintContent: "",
-					balloonContent: "Коммунарская средняя общеобразовательная школа № 3",
+					balloonContent: "Детский Сад № 98",
 				},
 				{
 					iconLayout: "default#imageWithContent",
@@ -243,10 +256,23 @@ function initMap() {
 				}
 			),
 			new ymaps.Placemark(
-				[59.622448, 30.389784],
+				[56.2467177757162, 43.83797108525813],
 				{
 					hintContent: "",
-					balloonContent: "Коммунароская детская школа искусств",
+					balloonContent: "Школа №144",
+				},
+				{
+					iconLayout: "default#imageWithContent",
+					iconImageHref: "/images/icons/stud.svg",
+					iconImageSize: [40, 40],
+					iconImageOffset: [-20, -20],
+				}
+			),
+			new ymaps.Placemark(
+				[56.24398074628285, 43.83478637589344],
+				{
+					hintContent: "",
+					balloonContent: 'Детский сад № 23 "ТЕРЕМОК"',
 				},
 				{
 					iconLayout: "default#imageWithContent",
@@ -258,10 +284,10 @@ function initMap() {
 
 			// Медицина
 			new ymaps.Placemark(
-				[59.615627, 30.381152],
+				[56.2458734695484, 43.83705411495491],
 				{
 					hintContent: "",
-					balloonContent: "Поликлиника",
+					balloonContent: 'ГБУ НО "Врачебно-физкультурный диспансер"',
 				},
 				{
 					iconLayout: "default#imageWithContent",
@@ -271,10 +297,36 @@ function initMap() {
 				}
 			),
 			new ymaps.Placemark(
-				[59.622444, 30.388961],
+				[56.249789819956405, 43.834929805451175],
 				{
 					hintContent: "",
-					balloonContent: "Стома Люкс - медцентр, клиникастоматологическая клиника",
+					balloonContent: "Второе городское отделение ГБУЗ НО НОБСМЭ",
+				},
+				{
+					iconLayout: "default#imageWithContent",
+					iconImageHref: "/images/icons/medic.svg",
+					iconImageSize: [40, 40],
+					iconImageOffset: [-20, -20],
+				}
+			),
+			new ymaps.Placemark(
+				[56.24764988514956, 43.84224687154225],
+				{
+					hintContent: "",
+					balloonContent: "МЕЧТА, медицинский центр",
+				},
+				{
+					iconLayout: "default#imageWithContent",
+					iconImageHref: "/images/icons/medic.svg",
+					iconImageSize: [40, 40],
+					iconImageOffset: [-20, -20],
+				}
+			),
+			new ymaps.Placemark(
+				[56.24945300051977, 43.83372875958672],
+				{
+					hintContent: "",
+					balloonContent: "ГБУЗ НО «Инфекционная больница №23»",
 				},
 				{
 					iconLayout: "default#imageWithContent",
@@ -286,10 +338,25 @@ function initMap() {
 
 			// Храм
 			new ymaps.Placemark(
-				[59.616797, 30.383478],
+				[56.2467024789105, 43.84043923018181],
 				{
 					hintContent: "",
-					balloonContent: "Церковь Владимира Равноапостольного",
+					balloonContent: "Храм святого великомученика и целителя Пантелеимона",
+				},
+				{
+					iconLayout: "default#imageWithContent",
+					iconImageHref: "/images/icons/kult.svg",
+					iconImageSize: [40, 40],
+					iconImageOffset: [-20, -20],
+				}
+			),
+
+			// Культура и отдых
+			new ymaps.Placemark(
+				[56.24637021286868, 43.835969460901794],
+				{
+					hintContent: "",
+					balloonContent: "Баня общая на дровах",
 				},
 				{
 					iconLayout: "default#imageWithContent",

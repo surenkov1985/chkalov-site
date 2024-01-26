@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		return [res, sum];
 	}
 
-	console.log($(".term .value span").text());
+	// console.log($(".term .value span").text());
 	if (document.querySelector(".aparts__filter")) {
 
 		const form = $(".aparts__filter_form");
