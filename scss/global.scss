@@ -39,6 +39,10 @@
 		}
 	}
 
+	&-quad {
+		border-radius: var(--radius) !important;
+	}
+
 	&-color {
 		color: var(--clr-white);
 		background: var(--clr-gradient);
@@ -65,6 +69,8 @@
 			backdrop-filter: blur(1px);
 			opacity: 0.4;
 		}
+
+
 
 
 		&:hover {

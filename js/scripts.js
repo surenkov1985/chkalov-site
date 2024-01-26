@@ -29,7 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		const dropdown = $(this).closest(".dropdown");
 
 		$(".dropdown").each((ind, drop) => {
-			console.log($(this).closest($(drop)));
+
+
 			if (!$(this).closest($(drop)).length) {
 				$(drop).removeClass("active");
 			}
@@ -41,7 +42,15 @@ document.addEventListener("DOMContentLoaded", function () {
 	$(document).on("click", ".dropdown__item", function () {
 		const dropdown = $(this).closest(".dropdown");
 		const value = $(this).find(".value").text();
+		const inputVal = $(this).find("input").val();
+		const form = $(".aparts__filter_form");
+		const formContainer = $(form).closest(".aparts__filter");
 
+		if ($(dropdown).closest(".aparts__filter_control").length) {
+
+			$(form).find("input[name=sortby]").val(inputVal);
+			$(form).trigger("submit");
+		}
 		$(dropdown).find(".dropdown__value>.value").text(value);
 		$(dropdown).removeClass("active");
 	});
@@ -161,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		$(calcOverPay).text(new Intl.NumberFormat("ru").format(overpay));
 	}
 
-	$(document).on("change", "input[name=calc-price]", function () {});
+	$(document).on("change", "input[name=calc-price]", function () { });
 
 	$(document).on("change", ".calc__form", function (e) {
 		if (e.target.name === "calc-price") {
@@ -177,15 +186,10 @@ document.addEventListener("DOMContentLoaded", function () {
 				term = parseFloat(form.dataset.term),
 				percent = parseFloat(form.dataset.percent);
 
-			// $(".first-pay-range").find(".range-field__line").slider("disable");
-			// $(".first-pay-range").find(".range-field__line").slider("option", { price: price });
-			// $(".first-pay-range").find(".range-field__line").slider("instance");
-			console.log($(".first-pay-range").find(".range-field__line").data().uiSlider.options);
 			$(".first-pay-range").find(".range-field__line").slider("destroy");
 			calcRangeSliderMin(".first-pay-range", pay, minPay, 1, 0.01, price, true);
 		}
 
-		// console.log($(".first-pay-range").find(".range-field__line").slider("option", "min"))
 		setCalcResult();
 	});
 
@@ -199,14 +203,56 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	console.log($(".term .value span").text());
 	if (document.querySelector(".aparts__filter")) {
-		$(".aparts__filter_form").css({ "max-height": $(".aparts__filter_form").find(".filter__form_fields").innerHeight() + "px" });
+
+		const form = $(".aparts__filter_form");
+		const filter = $(".aparts__filter").not(".aparts__filter_mobile");
+		const filterMobile = $(".aparts__filter_mobile");
+		const filterControl = $(".aparts__filter_control");
+
+		if ($(window).width() < 550) {
+			$(filter).css({ "display": "none" });
+			$(filterControl).css({ "display": "flex" });
+			$(filterMobile).css({ "display": "block" });
+			$(filterMobile).find(".aparts__filter_form").css({ "max-height": "100%" });
+		} else {
+			$(".aparts__filter_form").css({ "max-height": $(".aparts__filter_form").find(".filter__form_fields").innerHeight() + "px" });
+			$(form).css({ "max-height": $(form).find(".filter__form_fields").innerHeight() + "px" });
+			$(filterControl).css({ "display": "none" });
+			$(".aparts__filter_hidden").removeClass("active");
+		}
 
 		$(window).resize(function () {
-			$(".aparts__filter_form").css({ "max-height": $(".aparts__filter_form").find(".filter__form_fields").innerHeight() + "px" });
+
+			if ($(window).innerWidth() < 550) {
+				$(filter).css({ "display": "none" });
+				$(filterMobile).css({ "display": "block" });
+				$(filterControl).css({ "display": "flex" });
+				$(filterMobile).find(".aparts__filter_form").css({ "max-height": "100%" });
+			} else {
+				$(filter).css({ "display": "block" });
+				$(filterMobile).css({ "display": "none" });
+				$(filterControl).css({ "display": "none" });
+				$(form).find(".aparts__filter_form").css({ "max-height": $(form).find(".filter__form_fields").innerHeight() + "px" });
+
+			}
 		});
 	}
 
+	$(document).on("click", ".show-mobile-filter", function () {
+
+		$(".aparts__filter_mobile").addClass("show");
+		$("body").addClass("hidden")
+	});
+
+	$(document).on("click", ".aparts__filter_mobile .close_btn", function (e) {
+		e.preventDefault();
+
+		$(".aparts__filter_mobile").removeClass("show");
+		$("body").removeClass("hidden")
+	});
+
 	$(document).on("click", ".aparts__filter_hidden", function () {
+
 		const form = $(".aparts__filter_form");
 
 		if ($(form).hasClass("hidden")) {

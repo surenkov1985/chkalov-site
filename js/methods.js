@@ -46,23 +46,23 @@ function initMap() {
 	ymaps.ready(function () {
 		// Карта
 		var myMap = new ymaps.Map("main_map", {
-			center: [59.617322, 30.38357],
+			center: [56.246695, 43.828487],
 			zoom: 16,
-			controls: ["geolocationControl"],
+			controls: ["geolocationControl", "zoomControl"],
 		});
 
 		var myCircle = new ymaps.GeoObject(
 			{
 				geometry: {
 					type: "Circle",
-					coordinates: [59.617322, 30.38357],
-					radius: 208,
+					coordinates: [56.246695, 43.828487],
+					radius: 250,
 				},
 			},
 			{
 				fillColor: "#779DFD33",
 				stroke: false,
-				draggable: true,
+				draggable: false,
 			}
 		);
 
@@ -78,7 +78,7 @@ function initMap() {
 		// Создание меток
 		var objects = [
 			new ymaps.Placemark(
-				[59.617322, 30.38357],
+				[56.246695, 43.828487],
 				{
 					hintContent: "",
 					balloonContent: "ЖК Уютный",
@@ -335,9 +335,9 @@ function changeRangeSlider(slider, minVal = 1, maxVal, step = 1) {
 		.find("input")
 		.change(function () {
 			let input_left = $(slider)
-					.find(".polzunok-input-5-left")
-					.val()
-					.replace(/[^0-9]/g, ""),
+				.find(".polzunok-input-5-left")
+				.val()
+				.replace(/[^0-9]/g, ""),
 				opt_left = $(slider).find(".range-field__line").slider("option", "min"),
 				where_right = $(slider).find(".range-field__line").slider("values", 1),
 				input_right = $(slider)
@@ -416,9 +416,9 @@ function calcRangeSliderMin(slider, val, minVal = 1, maxVal, step = 1, price = n
 			.find("input")
 			.on("focusout", function (e) {
 				let input_left = $(slider)
-						.find(".polzunok-input-5-left")
-						.val()
-						.replace(/[^0-9]/g, ""),
+					.find(".polzunok-input-5-left")
+					.val()
+					.replace(/[^0-9]/g, ""),
 					opt_left = Math.round(
 						$(slider).find(".range-field__line").slider("value") * $(slider).find(".range-field__line").slider("option", "min")
 					),
@@ -479,9 +479,9 @@ function calcRangeSliderMin(slider, val, minVal = 1, maxVal, step = 1, price = n
 			.find("input")
 			.change(function () {
 				let input_left = $(slider)
-						.find(".polzunok-input-5-left")
-						.val()
-						.replace(/[^0-9]/g, ""),
+					.find(".polzunok-input-5-left")
+					.val()
+					.replace(/[^0-9]/g, ""),
 					opt_left = $(slider).find(".range-field__line").slider("option", "min"),
 					where_right = $(slider).find(".range-field__line").slider("value"),
 					opt_right = $(slider).find(".range-field__line").slider("option", "max");

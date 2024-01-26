@@ -31,6 +31,7 @@
 			bottom: 0;
 			z-index: 0;
 			overflow: hidden;
+			pointer-events: none;
 
 			&-house {
 				position: absolute;
@@ -79,6 +80,7 @@
 			height: 100%;
 			right: 0;
 			bottom: 0;
+			pointer-events: none;
 			z-index: 0;
 
 			&-house {
@@ -1067,6 +1069,66 @@
 
 	&__filter {
 
+		&_control {
+			display: flex;
+			flex-direction: column;
+			gap: var(--gap);
+
+			.filter__form_field {
+				flex: none;
+			}
+		}
+
+		&_mobile {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			background: var(--clr-light);
+			left: 0;
+			max-height: 0%;
+			bottom: 0;
+			overflow: hidden;
+			z-index: 100;
+			transition: all 0.5s;
+
+			&.show {
+				max-height: 100%;
+			}
+
+			&-title {
+				display: flex;
+				align-items: baseline;
+				justify-content: space-between;
+			}
+
+			& .aparts {
+
+				&__filter {
+
+					&_form {
+
+						&-container {
+							padding: 30px 30px;
+							overflow: auto;
+						}
+
+						height: auto;
+						// max-height: none !important;
+					}
+
+					&_result {
+						// padding: 25px 30px;
+						align-items: center;
+						justify-content: center;
+
+						&-num {
+							gap: 5px;
+						}
+					}
+				}
+			}
+		}
+
 		&_form {
 			// overflow: hidden;
 			height: auto;
@@ -1097,9 +1159,25 @@
 				transition: all var(--transition-duration);
 			}
 
+			& .show-filter {
+				display: inline;
+			}
+
+			& .hidden-filter {
+				display: none;
+			}
+
 			&.active {
 				& svg {
 					transform: rotate(180deg);
+				}
+
+				& .show-filter {
+					display: none;
+				}
+
+				& .hidden-filter {
+					display: inline;
 				}
 
 			}
@@ -1258,7 +1336,7 @@
 		top: calc(100% + 3px);
 		display: flex;
 		flex-direction: column;
-		z-index: 1;
+		z-index: 10;
 		box-shadow: 0px 4px 8px 0px rgba(139, 143, 162, 0.1);
 		visibility: hidden;
 		opacity: 0;

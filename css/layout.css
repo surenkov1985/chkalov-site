@@ -33,9 +33,7 @@
 .burger {
   position: relative;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   min-width: 25px;
   height: 18px;
   background: transparent;
@@ -165,8 +163,7 @@
   left: 0;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.3);
-  -webkit-backdrop-filter: blur(1px);
-          backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
   visibility: hidden;
   opacity: 0;
   transition: all var(--transition-duration);
@@ -186,6 +183,8 @@
   max-width: 450px;
   height: 100%;
   background: var(--clr-white);
+  -webkit-box-shadow: -3px 0px 8px 0px rgba(70, 70, 70, 0.2);
+  -moz-box-shadow: -3px 0px 8px 0px rgba(70, 70, 70, 0.2);
   box-shadow: -3px 0px 8px 0px rgba(70, 70, 70, 0.2);
   border-left: 1px solid var(--clr-light);
   overflow: auto;
@@ -333,6 +332,7 @@ html .ui-button.ui-state-disabled:active {
   border-radius: 50%;
   background: var(--clr-accent-blue-hover);
   cursor: pointer;
+  -ms-touch-action: auto;
   touch-action: auto;
   transition: transform 0.3s;
 }
@@ -394,13 +394,18 @@ html .ui-button.ui-state-disabled:active {
 
 .form__success_img {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .form__success_img svg {
   width: 40%;
   height: auto;
+  -webkit-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
   stroke-dasharray: 48;
   stroke-dashoffset: 48;
@@ -420,10 +425,12 @@ html .ui-button.ui-state-disabled:active {
 .form__success.active {
   opacity: 1;
   visibility: visible;
+  -webkit-animation: scaleIn 0.4s 0.1s forwards;
   animation: scaleIn 0.4s 0.1s forwards;
 }
 
 .form__success.active svg {
+  -webkit-animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.6s forwards;
   animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.6s forwards;
 }
 

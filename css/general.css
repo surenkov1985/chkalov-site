@@ -56,6 +56,7 @@ img {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
@@ -70,12 +71,14 @@ h6 {
 }
 
 html {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -127,6 +130,7 @@ div {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
@@ -149,7 +153,6 @@ select:-webkit-autofill:focus {
   border: none;
   outline: none !important;
   background: rgba(255, 255, 255, 0);
-  -webkit-transition: all 5000s ease-in-out;
   transition: all 5000s ease-in-out;
 }
 
