@@ -215,8 +215,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			$(filterMobile).css({ "display": "block" });
 			$(filterMobile).find(".aparts__filter_form").css({ "max-height": "100%" });
 		} else {
-			$(".aparts__filter_form").css({ "max-height": $(".aparts__filter_form").find(".filter__form_fields").innerHeight() + "px" });
-			$(form).css({ "max-height": $(form).find(".filter__form_fields").innerHeight() + "px" });
+			$(filter).find(".aparts__filter_form").css({ "max-height": $(filter).find(".filter__form_fields").innerHeight() + "px" });
+			// $(form).css({ "max-height": $(form).find(".filter__form_fields").innerHeight() + "px" });
 			$(filterControl).css({ "display": "none" });
 			$(".aparts__filter_hidden").removeClass("active");
 		}
@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				$(filter).css({ "display": "block" });
 				$(filterMobile).css({ "display": "none" });
 				$(filterControl).css({ "display": "none" });
-				$(form).find(".aparts__filter_form").css({ "max-height": $(form).find(".filter__form_fields").innerHeight() + "px" });
+				$(filter).find(".aparts__filter_form").css({ "max-height": $(filter).find(".filter__form_fields").innerHeight() + "px" });
 
 			}
 		});
